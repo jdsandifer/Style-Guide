@@ -4,7 +4,7 @@ API Code Style
 
 The API is written in PHP, and so respect the PHP style guide.
 
-
+We are using PHP-5.4, with the intention to move to Hack.
 
 
 Namespace
@@ -44,3 +44,10 @@ how to deprecated a function or method
 -> remove
 
 
+
+
+Logs
+-> invariant / variant
+
+
+Exceptions

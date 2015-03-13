@@ -691,14 +691,19 @@ $foo->bar(
 7.3. String
 ------------
 
-- to be filled
+- use double quote " everywhere
+- Complex variable interpolation can be done as follow
+
+```php
+$myStrin = "$bob is a part of {$policy->getID()}";
+```
 
 
 7.4. Number
 -----------
 
-- PHPDoc int or integer
-- 
+- PHPDoc can use int or integer
+
 
 7.5. Array
 ----------
@@ -725,13 +730,39 @@ $myList = [
 ```
 
 
+8. SQL
+------
+
+- Every dynamic parameter of a query MUST be escape before being used, even if it is a constant.
+- SQL keywords MUST be UPPER CASE.
+- Simple query can be written on one line
+- Complex query MUST be exploded on multiple line
+
+```PHP
+$query = " SELECT 
+				name,
+				age,
+				count(*) as nb
+		  	FROM receipts r
+		  	JOIN fun f ON f.id = r.fID
+		  	WHERE
+		  		(
+		  			f.id > 5 AND
+		  			f.id < 42
+		  		)
+		  		OR
+		  			name='fred' 
+		  	ORDER BY name DESC;"
+
+```
+
+9. HTML
+-------
+- For complex HTML pages, you MUST use a templating engine
+- The PHP short tag `<?=` can be used to print $variable
 
 
-
-
-
-
-
-
-
-- When function is deprecated in favor of an other one, use the `@deprecated` tag and indicate
+PHPDocs
+-------
+- PHPDocs MUST be used as much as possible to define type of parameters, variable, constant, etc
+- When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
