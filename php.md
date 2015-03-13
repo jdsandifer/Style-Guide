@@ -1,6 +1,21 @@
 PHP Coding Standard
 =====================
 
+## Table of Contents
+
+
+1. [Introduction](#introduction)
+1. [Overview](#overview)
+1. [Files](#files)
+1. [Namespaces](#namespaces)
+1. [Class](#class)
+1. [Control Structures](#controlStructures)
+1. [Closures](#closures)
+1. [Variables](#variables)
+1. [SQL](#sql)
+1. [HTML](#html)
+   
+
 0. Introduction
 ---------------
 
@@ -12,6 +27,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [PSR-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 
+**[⬆ back to top](#table-of-contents)**
 
 1. Overview
 -----------
@@ -40,6 +56,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
+**[⬆ back to top](#table-of-contents)**
+
 
 2. Files
 --------
@@ -51,11 +69,17 @@ MUST NOT use the other tag variations.
 
 - The closing `?>` tag MUST be omitted from files containing only PHP.
 
+**[⬆ back to top](#table-of-contents)**
+
+
 ### 2.2. Character Encoding
 
 - PHP code MUST use only UTF-8 without BOM.
 - All PHP files MUST use the Unix LF (linefeed) line ending.
 - All PHP files MUST end with a single blank line.
+
+**[⬆ back to top](#table-of-contents)**
+
 
 ### 2.3. Side Effects
 
@@ -113,6 +137,8 @@ if (! function_exists('bar')) {
 }
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 3. Namespaces
 -------------
@@ -141,6 +167,7 @@ use OtherVendor\OtherPackage\BazClass;
 // ... additional PHP code ...
 
 ```
+**[⬆ back to top](#table-of-contents)**
 
 
 4. Class
@@ -156,6 +183,7 @@ use OtherVendor\OtherPackage\BazClass;
 - Opening braces for methods MUST go on the next line, and closing braces MUST
   go on the next line after the body.
 
+**[⬆ back to top](#table-of-contents)**
 
 ### 4.1. Constants
 
@@ -173,6 +201,7 @@ class Foo
 }
 ```
 
+**[⬆ back to top](#table-of-contents)**
 
 ### 4.2. Properties
 
@@ -209,7 +238,7 @@ class ClassName
 
 ```
 
-
+**[⬆ back to top](#table-of-contents)**
 
 ### 4.3. Methods
 
@@ -273,6 +302,7 @@ class ClassName
 }
 ```   
 
+**[⬆ back to top](#table-of-contents)**
 
 
 ### 4.4. Method Arguments
@@ -321,6 +351,8 @@ class ClassName
 ```
 
 - Type hinting SHOULD be used as often as possible.
+
+**[⬆ back to top](#table-of-contents)**
 
 
 ### 4.5. Extends, Implements and Traits
@@ -379,6 +411,8 @@ class Yop extends Lait
 }
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 ### 4.6. `abstract`, `final`, and `static`
 
@@ -404,6 +438,8 @@ abstract class ClassName
     }
 }
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 4.7. Method and Function Calls
 
@@ -433,6 +469,8 @@ $foo->bar(
 );
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 5. Control Structures
 ---------------------
@@ -450,6 +488,8 @@ The general style rules for control structures are as follows:
 The body of each structure MUST be enclosed by braces. This standardizes how
 the structures look, and reduces the likelihood of introducing errors as new
 lines get added to the body.
+
+**[⬆ back to top](#table-of-contents)**
 
 
 ### 5.1. `if`, `elseif`, `else`
@@ -474,6 +514,8 @@ keywords look like single words.
 
 - Strict equality testing (`===`) SHOULD be used as often as you can
 
+
+**[⬆ back to top](#table-of-contents)**
 
 ### 5.2. `switch`, `case`
 
@@ -502,6 +544,8 @@ switch ($expr) {
 }
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 ### 5.3. `while`, `do while`
 
@@ -525,6 +569,8 @@ do {
 } while ($expr);
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 5.4. `for`
 
 A `for` statement looks like the following. Note the placement of parentheses,
@@ -537,6 +583,8 @@ for ($i = 0; $i < 10; $i++) {
 }
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 ### 5.5. `foreach`
     
 A `foreach` statement looks like the following. Note the placement of
@@ -548,6 +596,9 @@ foreach ($iterable as $key => $value) {
     // foreach body
 }
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 ### 5.6. `try`, `catch`
 
@@ -564,6 +615,9 @@ try {
     // catch body
 }
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 6. Closures
 -----------
@@ -671,6 +725,8 @@ $foo->bar(
 );
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 7. Variables
 ------------
@@ -681,11 +737,15 @@ $foo->bar(
 - MUST be lower case
 - Use mosty to indicate that something is not instanciated or wrong
 
+**[⬆ back to top](#table-of-contents)**
+
 
 7.2. Bool
 ---------
 
 - Must be lower case
+
+**[⬆ back to top](#table-of-contents)**
 
 
 7.3. String
@@ -698,11 +758,15 @@ $foo->bar(
 $myStrin = "$bob is a part of {$policy->getID()}";
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 
 7.4. Number
 -----------
 
 - PHPDoc can use int or integer
+
+**[⬆ back to top](#table-of-contents)**
 
 
 7.5. Array
@@ -729,6 +793,7 @@ $myList = [
 ];
 ```
 
+**[⬆ back to top](#table-of-contents)**
 
 8. SQL
 ------
@@ -756,10 +821,15 @@ $query = " SELECT
 
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
+
 9. HTML
 -------
 - For complex HTML pages, you MUST use a templating engine
 - The PHP short tag `<?=` can be used to print $variable
+
+**[⬆ back to top](#table-of-contents)**
 
 
 PHPDocs
