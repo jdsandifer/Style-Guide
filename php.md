@@ -9,6 +9,8 @@ PHP Coding Standard
 1. [Files](#files)
 1. [Namespaces](#namespaces)
 1. [Class](#class)
+	1. [Constant](#constant)
+   	1. [Properties](#properties) 
 1. [Control Structures](#controlStructures)
 1. [Closures](#closures)
 1. [Variables](#variables)
@@ -16,8 +18,7 @@ PHP Coding Standard
 1. [HTML](#html)
    
 
-0. Introduction
----------------
+## Introduction
 
 Our PHP style guide is based on [[PSR-1]] and [[PSR-2]].
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC 2119]].
@@ -29,8 +30,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 **[⬆ back to top](#table-of-contents)**
 
-1. Overview
------------
+## Overview
+
 
 - Code MUST use 4 spaces for indenting, not tabs.
 
@@ -59,10 +60,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 **[⬆ back to top](#table-of-contents)**
 
 
-2. Files
---------
+##Files
 
-### 2.1. PHP Tags
+### PHP Tags
 
 - PHP code MUST use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it
 MUST NOT use the other tag variations.
@@ -72,7 +72,7 @@ MUST NOT use the other tag variations.
 **[⬆ back to top](#table-of-contents)**
 
 
-### 2.2. Character Encoding
+### Character Encoding
 
 - PHP code MUST use only UTF-8 without BOM.
 - All PHP files MUST use the Unix LF (linefeed) line ending.
@@ -81,7 +81,7 @@ MUST NOT use the other tag variations.
 **[⬆ back to top](#table-of-contents)**
 
 
-### 2.3. Side Effects
+### Side Effects
 
 A file SHOULD declare new symbols (classes, functions, constants,
 etc.) and cause no other side effects, or it SHOULD execute logic with side
@@ -140,8 +140,8 @@ if (! function_exists('bar')) {
 **[⬆ back to top](#table-of-contents)**
 
 
-3. Namespaces
--------------
+## Namespaces
+
 
 - Namespaces  MUST follow [PSR-4]].
 
@@ -170,8 +170,8 @@ use OtherVendor\OtherPackage\BazClass;
 **[⬆ back to top](#table-of-contents)**
 
 
-4. Class
---------
+## Class
+
 - The term "class" refers to all classes, interfaces, and traits.
 - Classes without a namespace MUST follow [[PSR-0]] : the class name is mapping the directory, using underscores has directory seperator.
 - Class names MUST be declared in `StudlyCaps`.
@@ -185,7 +185,7 @@ use OtherVendor\OtherPackage\BazClass;
 
 **[⬆ back to top](#table-of-contents)**
 
-### 4.1. Constants
+### Constants
 
 - Class constants MUST be declared in all upper case with underscore separators.
 For example:
@@ -203,7 +203,7 @@ class Foo
 
 **[⬆ back to top](#table-of-contents)**
 
-### 4.2. Properties
+### Properties
 
 - Visibility MUST be declared on all properties.
 - The `var` keyword MUST NOT be used to declare a property.
@@ -240,7 +240,7 @@ class ClassName
 
 **[⬆ back to top](#table-of-contents)**
 
-### 4.3. Methods
+### Methods
 
 - Visibility MUST be declared on all methods.
 - Method names SHOULD NOT be prefixed with a single underscore to indicate
@@ -305,7 +305,7 @@ class ClassName
 **[⬆ back to top](#table-of-contents)**
 
 
-### 4.4. Method Arguments
+### Method Arguments
 
 - In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
@@ -355,7 +355,7 @@ class ClassName
 **[⬆ back to top](#table-of-contents)**
 
 
-### 4.5. Extends, Implements and Traits
+### Extends Implements Traits
 
 - The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
@@ -414,7 +414,7 @@ class Yop extends Lait
 **[⬆ back to top](#table-of-contents)**
 
 
-### 4.6. `abstract`, `final`, and `static`
+### abstract final static
 
 - When present, the `abstract` and `final` declarations MUST precede the
 visibility declaration.
@@ -441,7 +441,7 @@ abstract class ClassName
 
 **[⬆ back to top](#table-of-contents)**
 
-### 4.7. Method and Function Calls
+### Method and Function Calls
 
 When making a method or function call, there MUST NOT be a space between the
 method or function name and the opening parenthesis, there MUST NOT be a space
@@ -472,8 +472,8 @@ $foo->bar(
 **[⬆ back to top](#table-of-contents)**
 
 
-5. Control Structures
----------------------
+## Control Structures
+
 
 The general style rules for control structures are as follows:
 
@@ -492,7 +492,7 @@ lines get added to the body.
 **[⬆ back to top](#table-of-contents)**
 
 
-### 5.1. `if`, `elseif`, `else`
+### if elseif else
 
 An `if` structure looks like the following. Note the placement of parentheses,
 spaces, and braces; and that `else` and `elseif` are on the same line as the
@@ -517,7 +517,7 @@ keywords look like single words.
 
 **[⬆ back to top](#table-of-contents)**
 
-### 5.2. `switch`, `case`
+### switch
 
 A `switch` structure looks like the following. Note the placement of
 parentheses, spaces, and braces. 
@@ -547,7 +547,7 @@ switch ($expr) {
 **[⬆ back to top](#table-of-contents)**
 
 
-### 5.3. `while`, `do while`
+### while
 
 A `while` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
@@ -571,7 +571,7 @@ do {
 
 **[⬆ back to top](#table-of-contents)**
 
-### 5.4. `for`
+### for
 
 A `for` statement looks like the following. Note the placement of parentheses,
 spaces, and braces.
@@ -585,7 +585,7 @@ for ($i = 0; $i < 10; $i++) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### 5.5. `foreach`
+### foreach
     
 A `foreach` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
@@ -600,7 +600,7 @@ foreach ($iterable as $key => $value) {
 **[⬆ back to top](#table-of-contents)**
 
 
-### 5.6. `try`, `catch`
+### try catch
 
 A `try catch` block looks like the following. Note the placement of
 parentheses, spaces, and braces.
@@ -619,8 +619,8 @@ try {
 **[⬆ back to top](#table-of-contents)**
 
 
-6. Closures
------------
+## Closures
+
 
 Closures MUST be declared with a space after the `function` keyword, and a
 space before and after the `use` keyword.
@@ -728,11 +728,10 @@ $foo->bar(
 **[⬆ back to top](#table-of-contents)**
 
 
-7. Variables
-------------
+## Variables
 
-7.1. Null
----------
+### Null
+
 
 - MUST be lower case
 - Use mosty to indicate that something is not instanciated or wrong
@@ -740,16 +739,14 @@ $foo->bar(
 **[⬆ back to top](#table-of-contents)**
 
 
-7.2. Bool
----------
+### Bool
 
 - Must be lower case
 
 **[⬆ back to top](#table-of-contents)**
 
 
-7.3. String
-------------
+### String
 
 - use double quote " everywhere
 - Complex variable interpolation can be done as follow
@@ -761,16 +758,14 @@ $myStrin = "$bob is a part of {$policy->getID()}";
 **[⬆ back to top](#table-of-contents)**
 
 
-7.4. Number
------------
+### Number
 
 - PHPDoc can use int or integer
 
 **[⬆ back to top](#table-of-contents)**
 
 
-7.5. Array
-----------
+### Array
 
 - Array are not a scalar type, and MUST be type hinted
 - Use short notation to create arrays
@@ -795,8 +790,8 @@ $myList = [
 
 **[⬆ back to top](#table-of-contents)**
 
-8. SQL
-------
+## SQL
+
 
 - Every dynamic parameter of a query MUST be escape before being used, even if it is a constant.
 - SQL keywords MUST be UPPER CASE.
@@ -824,15 +819,15 @@ $query = " SELECT
 **[⬆ back to top](#table-of-contents)**
 
 
-9. HTML
--------
+## HTML
+
 - For complex HTML pages, you MUST use a templating engine
 - The PHP short tag `<?=` can be used to print $variable
 
 **[⬆ back to top](#table-of-contents)**
 
 
-PHPDocs
--------
+## PHPDocs
+
 - PHPDocs MUST be used as much as possible to define type of parameters, variable, constant, etc
 - When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
