@@ -731,6 +731,14 @@ $foo->bar(
 
 ## Variables
 
+- Variable assignement MUST have a space before and after the equal sign
+
+```PHP
+
+$test = 5;
+```
+
+
 ### Null
 
 
@@ -832,3 +840,46 @@ $query = " SELECT
 
 - PHPDocs MUST be used as much as possible to define type of parameters, variable, constant, etc
 - When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
+
+```PHP
+/**
+ * @deprecated Authentication::validateSessionOrRedirect
+ */
+function ValidateSession()
+{
+    Log::deprecated("ValidateSession: use Authentication::validateSessionOrRedirect");
+    Authentication::validateSessionOrRedirect();
+}
+```
+
+- If it makes sense, add PHPDocs on variable
+
+```PHP
+/** @var Policy */
+$randomVariable = PolicyStore::getID();
+```
+
+- Type of the parameters MUST be written before the variable name
+- Scalar type are lower case
+- The description of a function must explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
+- Jump a line between the description and the list of parameter
+- Description of parameter can be omit when they are really obvious
+
+```PHP
+    /**
+     * Sets the currency that a report should use.
+     *
+     * @param string $currency
+     */
+    public function setReportCurrency($currency)
+    {
+        $this->_load();
+        $this->_values['outputCurrency'] = $currency;
+    }
+```
+
+
+
+
+
+
