@@ -40,7 +40,8 @@ Braces are mandatory where optional. One line statements shall not be used.
 
 ```java
 if (foo) {
-    bar();}
+    bar();
+}
 ```
 
 ### Indentation
@@ -69,6 +70,15 @@ The default column limit is __100__ characters. However, when it makes sense, li
 
 - Public static final fields are `UPPERCASE_WITH_UNDERSCORES`.
 - All other fields should use `lowerCamelCase`.
+
+### Type Variables
+
+Each type variable shall be named in the same way as a class (`UpperCamelCase`), followed by the capital letter  `T`. This has the advantage of being more readable than one-letter types (_eg._ `List<T>`), and easily distinguishable from a regular class name at the same time.
+
+Examples:
+
+* `ConfigurationT`
+* `DataT`
 
 **[⬆ back to top](#table-of-contents)**
 
