@@ -55,6 +55,26 @@ ExpensifyAPIResponse apiResponse = api.prepareCommand("Command")
         .execute();
 ```
 
+### Enums
+
+Enumerations shall be formatted as follows:
+
+* One value per line,
+* Every value ends with a comma (`,`),
+* A semicolon (`;`) is added after all the definitions, on a separate line.
+
+```java
+/**
+ * Some explanation
+ */
+public enum FooBarEnum {
+    FOO,
+    BAR,
+    FOOBAR,
+    ;
+}
+```
+
 ### Line wrapping
 
 The default column limit is __100__ characters. However, when it makes sense, line-wrapping is not mandatory (_eg._ if a line is 102 characters long).
@@ -79,6 +99,14 @@ Examples:
 
 * `ConfigurationT`
 * `DataT`
+
+### Enums
+
+Enums' names shall end with `Enum`.
+
+Examples:
+
+* `FooBarEnum` instead of `FooBar`
 
 **[⬆ back to top](#table-of-contents)**
 
