@@ -28,7 +28,8 @@ In addition to that, the following order of definitions is preferred:
 1. public and static attributes,
 2. protected and private attributes,
 3. abstract methods, if any,
-4. protected and private methods
+4. public methods,
+5. protected and private methods
 
 **[⬆ back to top](#table-of-contents)**
 
