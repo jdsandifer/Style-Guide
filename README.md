@@ -1,20 +1,16 @@
 # Expensify Style Guide
 
+Did you ever wonder what your code should look like? Wonder no more! This repo will contain specific language styles and maybe, possibly, even best practices and conventions for different layers.
 
-This repository is storing all the douments related to our style guide. This include a guide per language, but also best practice and convention that you can find in the different layers.
+Please propose modifications through pull requests.
 
-Modification can be proposed and discussed through pull requests.
+# Code
+* [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
+* [Java](https://github.com/Expensify/Style-Guide/blob/master/java.md)
+* [JavaScript](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
 
-
-- PHP
-- C++
-- JavaScript
-- Java
-
-- PHP
-- Web Application
-- Mobile
-- Auth
-
+# Other
+* [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
+* [API](https://github.com/Expensify/Style-Guide/blob/master/api.md)
 
 
