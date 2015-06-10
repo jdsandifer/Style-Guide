@@ -8,6 +8,7 @@ CSS Coding Standards
 3. [Formatting](#formatting)
 4. [Misc](#misc)
 5. [Examples](#examples)
+6. [CSScomb Configuration](#csscomb-configuration)
 
 ## Introduction
 
@@ -90,5 +91,38 @@ Here are some good examples that more or less apply the above guidelines:
 
 .much-better {
     content: '4 soft spaces indentation, space after colon, single line quotation, semicolon';
+}
+```
+
+## CSScomb Configuration
+
+Use the following configuration when using the [CSScomb tool](http://csscomb.com/) to tidy up your files.
+
+```json
+{
+    "always-semicolon": true,
+    "block-indent": "    ",
+    "color-case": "lower",
+    "color-shorthand": false,
+    "element-case": "lower",
+    "eof-newline": true,
+    "leading-zero": true,
+    "quotes": "single",
+    "remove-empty-rulesets": true,
+    "sort-order-fallback": "abc",
+    "space-after-colon": " ",
+    "space-after-combinator": " ",
+    "space-after-opening-brace": "\n",
+    "space-after-selector-delimiter": "\n",
+    "space-before-closing-brace": "\n",
+    "space-before-colon": "",
+    "space-before-combinator": " ",
+    "space-before-opening-brace": " ",
+    "space-before-selector-delimiter": "",
+    "space-between-declarations": "\n",
+    "strip-spaces": true,
+    "tab-size": true,
+    "unitless-zero": true,
+    "vendor-prefix-align": true
 }
 ```
