@@ -23,10 +23,11 @@ CSS Coding Standards
 ## Formatting
 
 * Sort declarations alphabetically, except for vendor prefixes.
-* Use hex color codes `#000000` (full 6 digits) unless using `rgba()` in raw CSS (SCSS' `rgba()` function is overloaded to accept hex colors as a param, e.g., `rgba(#000000, .5)`).
+* Use full 6 digits, lower cased hex color codes `#00aa00`. When using SCSS, the `rgba()` method will support hex colors as a param, e.g., `rgba(#00ff00, 0.5)`. In raw CSS it is permitted to break this rule when using `rgba()` only.
 * Use `//` for comment blocks (instead of `/* */`).
 * Use single line quotes `'` for strings, e.g. `url('http://...')`.
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
+* Add leading zeros as in `0.5`.
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
 * When using vendor prefixes align with soft spaces:
 
@@ -57,9 +58,9 @@ Here are some good examples that more or less apply the above guidelines:
 ```scss
 // Example of good basic formatting practices
 .styleguide-format {
-    background-color: rgba(0, 0, 0, .5);
-    border: 1px solid #00fff00;
-    color: #000000;
+    background-color: rgba(#000000, 0.5);
+    border: 1px solid #00ff00;
+    color: #ffffff;
     display: block;
     z-index: 1;
 }
@@ -72,6 +73,7 @@ Here are some good examples that more or less apply the above guidelines:
 }
 
 // Avoid unnecessary shorthand declarations
+// e.g. if you only want to modify the bottom margin:
 .not-so-good {
     margin: 0 0 20px;
 }
