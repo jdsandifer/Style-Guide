@@ -27,6 +27,7 @@ CSS Coding Standards
 
 ## Formatting
 
+* Sort declarations alphabetically, except for vendor prefixes.
 * Use hex color codes `#000000` (full 6 digits) unless using `rgba()` in raw CSS (SCSS' `rgba()` function is overloaded to accept hex colors as a param, e.g., `rgba(#000000, .5)`).
 * Use `//` for comment blocks (instead of `/* */`).
 * Use single line quotes `'` for strings, e.g. `url('http://...')`.
@@ -64,6 +65,7 @@ Here are some good examples that more or less apply the above guidelines:
     background-color: rgba(0, 0, 0, .5);
     border: 1px solid #00fff00;
     color: #000000;
+    display: block;
     z-index: 1;
 }
 
@@ -87,10 +89,10 @@ Here are some good examples that more or less apply the above guidelines:
     color :blue;
 }
 .even-worse{
- display :block }
+ content :"abc" }
 
 .much-better {
-    content: '4 soft spaces indentation, space after colon, single line quotation, semicolon';
+    content: '4 soft spaces indentation, space after colon, single quotes, semicolon';
 }
 ```
 
