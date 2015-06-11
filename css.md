@@ -3,16 +3,11 @@ CSS Coding Standards
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Spacing](#spacing)
-3. [Formatting](#formatting)
-4. [Misc](#misc)
-5. [Examples](#examples)
-6. [CSScomb Configuration](#csscomb-configuration)
-
-## Introduction
-
-
+1. [Spacing](#spacing)
+2. [Formatting](#formatting)
+3. [Misc](#misc)
+4. [Examples](#examples)
+5. [CSScomb Configuration](#csscomb-configuration)
 
 ## Spacing
 
