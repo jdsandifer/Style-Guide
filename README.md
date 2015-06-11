@@ -8,6 +8,7 @@ Please propose modifications through pull requests.
 * [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
 * [Java](https://github.com/Expensify/Style-Guide/blob/master/java.md)
 * [JavaScript](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
+* [CSS](https://github.com/Expensify/Style-Guide/blob/master/css.md)
 
 # Other
 * [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
