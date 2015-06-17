@@ -5,10 +5,11 @@ Did you ever wonder what your code should look like? Wonder no more! This repo w
 Please propose modifications through pull requests.
 
 # Code
-* [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
+* [CSS](https://github.com/Expensify/Style-Guide/blob/master/css.md)
 * [Java](https://github.com/Expensify/Style-Guide/blob/master/java.md)
 * [JavaScript](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
-* [CSS](https://github.com/Expensify/Style-Guide/blob/master/css.md)
+* [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
+* [SQL](https://github.com/Expensify/Style-Guide/blob/master/sql.md)
 
 # Other
 * [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
