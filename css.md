@@ -46,6 +46,8 @@ CSS Coding Standards
   
   ```
 
+* When concatenating strings and variables use `#{}` style interpolation, e.g. `url('#{ $baseURL }/image.jpg')`
+
 
 ## Misc
 
@@ -108,6 +110,7 @@ Use the following configuration when using the [CSScomb tool](http://csscomb.com
     "leading-zero": true,
     "quotes": "single",
     "remove-empty-rulesets": true,
+    "sort-order": [],
     "sort-order-fallback": "abc",
     "space-after-colon": " ",
     "space-after-combinator": " ",
