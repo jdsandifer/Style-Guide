@@ -2,6 +2,8 @@
 
 For almost all of our styles, refer to the [ES5 AirBnB styleguide ](https://github.com/airbnb/javascript/tree/master/es5).
 
+When writing ES6 code (supported in files with a `.jsx` extension), refer to the [ES6 AirBnB styleguide](https://github.com/airbnb/javascript/tree/master/es5).
+
 There are a few things that we have customized for our tastes which will take presidence over AirBnB.
 
 # Whitespace
