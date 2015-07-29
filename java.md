@@ -4,9 +4,10 @@
 
 1. [Introduction](#introduction)
 2. [Class](#class)
-3. [Formatting](#formatting)
-4. [Name](#naming)
-5. [Javadoc](#javadoc)
+3. [Lambda functions](#lambda-functions)
+4. [Formatting](#formatting)
+5. [Name](#naming)
+6. [Javadoc](#javadoc)
  
 ## Introduction
 
@@ -31,6 +32,58 @@ In addition to that, the following order of definitions is preferred:
 4. public methods,
 5. protected and private methods
 
+**[⬆ back to top](#table-of-contents)**
+
+## Lambda functions
+
+- When using map/filter/reduce, use function references when possible. They make the code shorter and in most cases, easier to read
+- One-line lambda functions don't need the `return` keyword, nor curly brackets
+
+```java
+// Bad
+List<Expense> reimbursableExpenses = expenses.stream()
+        .filter(expense -> {
+            return expense.isReimbursable();
+        })
+        .collect(Collectors.toList());
+
+// Better
+List<Expense> reimbursableExpenses = expenses.stream()
+        .filter(expense -> expense.isReimbursable())
+        .collect(Collectors.toList());
+
+// Best
+List<Expense> reimbursableExpenses = expenses.stream()
+        .filter(Expense::isReimbursable)
+        .collect(Collectors.toList());
+
+```
+
+- Attribute types
+
+The compiler can infer the type of the attributes of lambda expressions. Don't specify them when the types are clearly understandable. 
+
+```java
+private void someMethod(List<Report> reports) {
+    reports.stream()
+            // unnecessarily verbose, the type of the list is defined just above in the signature
+            .filter((Report report) -> report.hasBeenApprovedBy("..."))
+            .somethingElse();
+}
+
+// better
+private void someMethod(List<Report> reports) {
+    reports.stream()
+            .filter(report -> report.hasBeenApprovedBy("..."))
+            .somethingElse();
+}
+
+// Good, makes the code understandable without knowing the the functional interface OnReportsLoadedAction
+OnReportsLoadedAction action = (List<Report> loadedReports) -> {
+    // do something with loadedReports
+};
+
+```
 **[⬆ back to top](#table-of-contents)**
 
 ## Formatting
