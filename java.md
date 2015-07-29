@@ -59,8 +59,6 @@ List<Expense> reimbursableExpenses = expenses.stream()
 
 ```
 
-- Attribute types
-
 The compiler can infer the type of the attributes of lambda expressions. Don't specify them when the types are clearly understandable. 
 
 ```java
