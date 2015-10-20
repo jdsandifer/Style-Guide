@@ -56,6 +56,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
   
 - PHP [keywords] MUST be in lower case.
 
+- Method names and variables use the lowerCamelCase style.
+
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
 **[⬆ back to top](#table-of-contents)**
