@@ -11,5 +11,7 @@ If you can't find something in here, it means you need to refer to our PHP (or S
 ## Pointers / references / const
 
 `const` *must* be used everywhere applicable.
-The `&` and `*` *must* stick to the type, like this: `const std::string& var`, `Command* cmd`
+
+The `&` and `*` *must* stick to the type, like this: `const std::string& var`, `Command* cmd`.
+
 When using these on variables, they must stick to the variable name.
