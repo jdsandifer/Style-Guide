@@ -9,10 +9,9 @@ The only notable difference with the PHP style is that concatenation operators *
 
 TODO
 
-## Namespace prefix
+## Namespace
 
-`std` and other namespaces *must* be prefixed everywhere. To keep things consistent, when calling a class method / using a class variable
- from inside the same class, the `ClassName` *should* be prefixed.
+The `using namespace` statement is *only* allowed on the `std` namespace. That means `std::` does *not have to* be prefixed everywhere.
 
 ## Pointers and references
 
