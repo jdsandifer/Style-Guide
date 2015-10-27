@@ -1,7 +1,13 @@
 # C++
 
 Our main style in C++ is to follow every style rule in PHP. This document only describes styles specific to C++.
-If you can't find something in here, it means you need to refer to our PHP (or SQL) style.
+If you can't find something in here, it means you need to refer to our [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md) (or [SQL](https://github.com/Expensify/Style-Guide/blob/master/sql.md)) style.
+
+The only notable difference with the PHP style is that concatenation operators *must* be surrounded by spaces.
+
+## Documentation
+
+TODO
 
 ## Namespace prefix
 
