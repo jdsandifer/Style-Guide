@@ -24,7 +24,7 @@ When using these on variables, they must stick to the variable name.
 `const` *should* be used to achieve specific objectives, generally to avoid extraneous copies. A key scenario would be when passing an object by pointer or reference that shouldn't be modified, rather than by copy. Example:
 
 ```cpp
-string foo(const std::string& dontChangeThis)
+string foo(const string& dontChangeThis)
 {
     return dontChangeThis + "bar";
 }
