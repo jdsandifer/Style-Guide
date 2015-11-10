@@ -7,7 +7,25 @@ The only notable difference with the PHP style is that concatenation operators *
 
 ## Documentation
 
-TODO
+All methods *must* be documented in their respective header file.
+
+Each parameter *must* be documented using the following format: `* @param paramName [description]`.
+
+Return values *must* be documented using the following format: `* @return description`.
+
+Thus, a doc block for a method *must* look like this:
+
+```cpp
+    /**
+     * Verifies that the given accountID is the owner of the report
+     *
+     * @param db
+     * @param reportID
+     * @param accountID
+     * @return true/false
+     */
+    static bool verifyOwner(SQLite& db, const uint64_t reportID, const int accountID);
+```
 
 ## Namespace
 
