@@ -9,22 +9,24 @@ The only notable difference with the PHP style is that concatenation operators *
 
 All methods *must* be documented in their respective header file.
 
-Each parameter *must* be documented using the following format: `* @param paramName [description]`.
+Each parameter *must* be documented using the following format: `* @param paramName [description]`. The description is required if the parameter name is non-obvious.
 
 Return values *must* be documented using the following format: `* @return description`.
+
+All exceptions thrown by a method *must* be documented using the following format: `* @throws InvalidJSONException [description]`. The description is required if it is not obvious why this exception can be thrown.
 
 Thus, a doc block for a method *must* look like this:
 
 ```cpp
     /**
-     * Verifies that the given accountID is the owner of the report
+     * Gets a reportNameValuePair's value
      *
      * @param db
      * @param reportID
-     * @param accountID
-     * @return true/false
+     * @param name     The name of the reportNameValuePair
+     * @return the rNVP's value
      */
-    static bool verifyOwner(SQLite& db, const uint64_t reportID, const int accountID);
+    static std::string getValue(SQLite& db, const uint64_t reportID, const std::string& name);
 ```
 
 ## Namespace
