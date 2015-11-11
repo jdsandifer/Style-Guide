@@ -10,6 +10,7 @@ Please propose modifications through pull requests.
 * [JavaScript](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
 * [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
 * [SQL](https://github.com/Expensify/Style-Guide/blob/master/sql.md)
+* [C++](https://github.com/Expensify/Style-Guide/blob/master/cpp.md)
 
 # Other
 * [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
