@@ -6,6 +6,21 @@ When writing ES6 or React code (supported in files with a `.jsx` extension), ple
 
 There are a few things that we have customized for our tastes which will take presidence over Airbnb's guide.
 
+## Functions
+  - Always wrap the function expression for immediately-invoked function expressions (IIFE) in parens:
+
+    ```javascript
+    // bad
+    (function() {
+        console.log('Welcome to the Internet. Please follow me.');
+    }());
+
+    // good
+    (function() {
+        console.log('Welcome to the Internet. Please follow me.');
+    })();
+    ```
+
 ## Whitespace
   - Use soft tabs set to 4 spaces.
 
