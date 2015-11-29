@@ -11,12 +11,12 @@ There are a few things that we have customized for our tastes which will take pr
 
     ```javascript
     // bad
-    (function() {
+    (function () {
         console.log('Welcome to the Internet. Please follow me.');
     }());
 
     // good
-    (function() {
+    (function () {
         console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
@@ -26,17 +26,17 @@ There are a few things that we have customized for our tastes which will take pr
 
     ```javascript
     // bad
-    function() {
+    function () {
     ∙∙const name;
     }
 
     // bad
-    function() {
+    function () {
     ∙const name;
     }
 
     // good
-    function() {
+    function () {
     ∙∙∙∙const name;
     }
     ```
@@ -70,25 +70,25 @@ There are a few things that we have customized for our tastes which will take pr
 
     ```javascript
     // bad
-    function() {
+    function () {
         var _this = this;
-        return function() {
+        return function () {
             console.log(_this);
         };
     }
 
     // bad
-    function() {
+    function () {
         var that = this;
-        return function() {
+        return function () {
             console.log(that);
         };
     }
 
     // good
-    function() {
+    function () {
         var self = this;
-        return function() {
+        return function () {
             console.log(self);
         };
     }
