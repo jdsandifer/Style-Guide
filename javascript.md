@@ -65,6 +65,16 @@ There are a few things that we have customized for our tastes which will take pr
     }
     ```
 
+  - Do not add spaces inside curly braces.
+
+    ```javascript
+    // bad
+    const foo = { clark: 'kent' };
+
+    // good
+    const foo = {clark: 'kent'};
+    ```
+
 ## Naming Conventions
   - When saving a reference to `this` use `self`.
 
