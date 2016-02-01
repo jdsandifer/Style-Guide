@@ -763,7 +763,7 @@ $test = 5;
 - Complex variable interpolation can be done as follow
 
 ```php
-$myStrin = "$bob is a part of {$policy->getID()}";
+$myString = "$bob is a part of {$policy->getID()}";
 ```
 
 **[⬆ back to top](#table-of-contents)**
