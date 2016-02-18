@@ -157,6 +157,8 @@ declaration.
 
 - There MUST be one blank line after the `use` block.
 
+- When inside a namespaced class, always declare all the `use`d classes that are outside the namespace. This means not using the `\` at the beginning of a class name and make all the dependencies explicit.
+
 For example:
 
 ```php
