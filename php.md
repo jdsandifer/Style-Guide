@@ -44,7 +44,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 - There MUST NOT be a hard limit on line length; the soft limit MUST be 120
   characters; lines SHOULD be 80 characters or less.
-4. 
 
 - Files MUST use only `<?php` and `<?=` tags.
 
@@ -57,6 +56,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 - PHP [keywords] MUST be in lower case.
 
 - Method names and variables use the lowerCamelCase style.
+
+- When calling/referencing classes and methods, their respective case MUST be respected.
 
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
