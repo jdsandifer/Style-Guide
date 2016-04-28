@@ -199,7 +199,9 @@ renderApplication(appRenderer);
 This one isn't specific to js but we think it's worth mentioning because
 
 1.- We use it heavily on web and mobile
+
 2.- We should be using it more on mobile
+
 3.- For new hires?
 
 The publisher / subscriber pattern helps decouple objects from one another by changing the paradigm a bit from having objects directly call one another (thus coupling one to the public API of the other) to having objects publish (send / emit) events or messages while others subscribe (react) to them and using an event bus to send and receive these messages, which in our case is the `PubSub` library.
