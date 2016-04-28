@@ -221,9 +221,9 @@ Something we see often is people creating unnecessary anonymous functions and pa
 ```js
 API.BankAccount_Create({ ... })
   .done(function(){
-    deferred.resolve();
+    return deferred.resolve();
   }).unhandled( function(){
-    deferred.reject();
+    return deferred.reject();
   });
 ```
 
@@ -252,7 +252,8 @@ invoke done callbacks
 invoke deferred.resolve
 ```
 
-While the two solutions are semantically equivalent they are logically different as one introduces a new anonymous function that in this particular case is unnecessary. This is unlikely to improve performance or affect the code in any way but we think it's important to understand the difference between the two implementations.
+While the two solutions are semantically equivalent (given that the wrapping anonymous functions have the same _contract_ than the ones that aren't wrapped)
+they are logically different as one introduces a new anonymous function that in this particular case is unnecessary. This is unlikely to improve performance or affect the code in any way but we think it's important to understand the difference between the two implementations.
 
 This isn't limited to functions that take no parameters, for example, imagine `API.GetReportSummary` returns a promise that resolves with a report name and status as two separate strings, that means that the function passed to the done callback takes two parameters (name, status), so
 
