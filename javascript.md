@@ -129,10 +129,10 @@ In Expensify this looks like this
 and a perfect example of this is [setTimeout (on mobile)](https://github.com/Expensify/Mobile-Expensify/blob/18781e7c7115355a24fadcf04c6326f934ce4f7d/JavaScript/yapl.js#L218-L232).
 
 ```js
-this.setTimeout = (function(){
+this.setTimeout = (function () {
     var id = 0;
-    return function( fun, milliseconds ){
-        yaplCall('yaplSetTimeout', fun, milliseconds );
+    return function(fun, milliseconds) {
+        yaplCall('yaplSetTimeout', fun, milliseconds);
         return ++id;
     };
 })();
@@ -155,15 +155,15 @@ Last, I'd advise against using it for dependency injection unless you're trying 
 ```js
 // Nothing exciting here, just defining two different app renderers
 var ConsoleRenderer = {
-  render: function(app) {
-      console.log(app.name)
-  }
+    render: function (app) {
+        console.log(app.name);
+    }
 };
 
 var GrowlRenderer = {
-  render: function(app) {
-      yaplShowGrowl(app.name)
-  }
+    render: function (app) {
+        yaplShowGrowl(app.name);
+    }
 };
 
 // This illustrates the benefits of dependency injection
@@ -172,26 +172,26 @@ var appRenderer = ConsoleRenderer;
 // var appRenderer = GrowlRenderer;
 
 // The IIFE way
-(function(renderer){
+(function (renderer) {
     var app = {
-      name: "Carlos"
+        name: 'Carlos'
     };
 
     renderer.render(app);
-})(appRenderer);
+}(appRenderer));
 
-// The alternative with clearer syntax (imo)
-// NOTE that in this case renderApplication is added to the current scope
+// The alternative with clearer syntax
+// Note that in this case renderApplication is added to the current scope
 // (which may well be the global scope)
-function renderApplication = function(renderer){
+function renderApplication(renderer) {
     var app = {
-      name: "Carlos"
+        name: 'Carlos'
     };
 
     renderer.render(app);
 }
 
-renderApplication(renderer);
+renderApplication(appRenderer);
 ```
 
 ## Publisher / Subscriber
@@ -256,17 +256,17 @@ This isn't limited to functions that take no parameters, for example, imagine `A
 
 ```js
 // This
-API.GetReportSummary({ reportID: 123 })
-  .done(function( name, status ){
-    logReportSummary( name, status );
-  });
+API.GetReportSummary({reportID: 123})
+    .done(function (name, status) {
+        logReportSummary(name, status);
+    });
 
 // Is (semantically) equivalent to
-API.GetReportSummary({ reportID: 123 })
-  .done( logReportSummary );
+API.GetReportSummary({reportID: 123})
+    .done(logReportSummary);
 
-function logReportSummary( name, status ){
-  console.log( "Report Name:", name, "Report Status:", status );
+function logReportSummary(name, status) {
+    console.log('Report Name:', name, 'Report Status:', status);
 }
 ```
 
@@ -274,15 +274,15 @@ There are times however where a function that is passed as a parameter to anothe
 
 ```js
 // Wrong
-deletingExpense.done( this.fetchItems );
+deletingExpense.done(this.fetchItems);
 
 // Right
-deletingExpense.done( this.fetchItems.bind( this ) );
+deletingExpense.done(this.fetchItems.bind(this));
 
 // Right and more performant (keep reading)
 var self = this;
-deletingExpense.done( function(){
-  self.fetchItems();
+deletingExpense.done(function () {
+    self.fetchItems();
 });
 ```
 
