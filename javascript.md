@@ -138,19 +138,19 @@ this.setTimeout = (function () {
 })();
 ```
 
-I only know of one **good reason** to use IIFEs and that is to **take advantage of closures**.
+We only know of one **good reason** to use IIFEs and that is to **take advantage of closures**.
 
 What the code above does is define a function that returns a closure and immediately invoke the function. You can think of a closure like a box with two things in it: a function and a context where the context is just a collection of variables that are available to the function. In the case above the IIFE defines (and invokes) a function that returns a closure: the inner function + the variable `id`.
 
 Closures are used in js to emulate private variables. In js there's no such thing as private variables (surprise!) but by leveraging closures you can emulate private variables and this is illustrated in the `setTimeout` example above where the variable id is inaccessible from outside of that function.
 
-Note that we (I) **do not recommend using IIFEs to emulate private variables** in Expensify's code bases because the convention of prefixing private variables with an underscore serves the same purpose and allows you to access the variables from outside the function **for debugging purposes**: think about accessing these from the Safari / Chrome console while debugging our iOS or web app.
+Note that we **do not recommend using IIFEs to emulate private variables** in Expensify's code bases because the convention of prefixing private variables with an underscore serves the same purpose and allows you to access the variables from outside the function **for debugging purposes**: think about accessing these from the Safari / Chrome console while debugging our iOS or web app.
 
-For the specific case of `setTimeout`, creating a module seemed like overkill for this and we need `setTimeout` to return a number but I don't think I'm ever gonna need to inspect the value of `id`.
+For the specific case of `setTimeout`, creating a module seemed like overkill for this and we need `setTimeout` to return a number but we don't think we're ever gonna need to inspect the value of `id`.
 
 Also note that IIFEs make no sense in a modular JS environment since you export only what you want to expose and everything else remains private to the module.
 
-Last, I'd advise against using it for dependency injection unless you're trying not to pollute scope since you can accomplish the same thing with clearer syntax. Consider the following example
+Last, we'd advise against using it for dependency injection unless you're trying not to pollute scope since you can accomplish the same thing with clearer syntax. Consider the following example
 
 ```js
 // Nothing exciting here, just defining two different app renderers
@@ -196,7 +196,7 @@ renderApplication(appRenderer);
 
 ## Publisher / Subscriber
 
-This one isn't specific to js but I think it's worth mentioning because
+This one isn't specific to js but we think it's worth mentioning because
 
 1.- We use it heavily on web and mobile
 2.- We should be using it more on mobile
@@ -214,7 +214,7 @@ Note that if an object is publishing an event to which only that object is subcr
 
 Probably one of the most important concepts (and features!) **to understand** of JS is that functions are first-class citizens, which is a fancy way of saying that functions can be assigned to variables, passed as function parameters and returned from functions.
 
-Something I see often is people creating unnecessary anonymous functions and passing them as parameters. Here's an example of what I mean
+Something we see often is people creating unnecessary anonymous functions and passing them as parameters. Here's an example of what we mean
 
 ```js
 API.BankAccount_Create({ ... })
@@ -250,7 +250,7 @@ invoke done callbacks
 invoke deferred.resolve
 ```
 
-While the two solutions are semantically equivalent they are logically different as one introduces a new anonymous function that in this particular case is unnecessary. This is unlikely to improve performance or affect the code in any way but I think it's important to understand the difference between the two implementations.
+While the two solutions are semantically equivalent they are logically different as one introduces a new anonymous function that in this particular case is unnecessary. This is unlikely to improve performance or affect the code in any way but we think it's important to understand the difference between the two implementations.
 
 This isn't limited to functions that take no parameters, for example, imagine `API.GetReportSummary` returns a promise that resolves with a report name and status as two separate strings, that means that the function passed to the done callback takes two parameters (name, status), so
 
