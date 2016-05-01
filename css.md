@@ -22,6 +22,7 @@ CSS Coding Standards
 ## Formatting
 
 * Sort declarations alphabetically, except for vendor prefixes, variables and mixins. Variables and mixins (like `@include` or `@extend`) always belong to the top followed by an empty line.
+ * Exception: Media query mixins (like `@include mq-tablet` or `@include mq-hd`) always belong to the bottom of declaration blocks, behind all other types of rulesets.
 * Use full 6 digits, lower cased hex color codes `#00aa00`. When using SCSS, the `rgba()` method will support hex colors as a param, e.g., `rgba(#00ff00, 0.5)`. In raw CSS it is permitted to break this rule when using `rgba()` only.
 * Use `//` for comment blocks (instead of `/* */`).
 * Use single line quotes `'` for strings, e.g. `url('http://...')`.
