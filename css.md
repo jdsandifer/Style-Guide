@@ -28,7 +28,9 @@ CSS Coding Standards
 * Use single line quotes `'` for strings, e.g. `url('http://...')`.
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 * Add leading zeros as in `0.5`.
+* Always use double colons with pseudo elements (e.g. `.foo::after`) and single colons with pseudo classes (e.g. `.foo:hover`)
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
+ * When using shorthands make sure that values are as concise as possible, e.g. `margin: 0 5px` instead of `margin: 0 5px 0 5px`
 * When using vendor prefixes align with soft spaces:
 
   ```scss
