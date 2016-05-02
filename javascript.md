@@ -121,9 +121,9 @@ The name is confusing and the syntax may feel strange if you've never seen it be
 In Expensify this looks like this
 
 ```js
-(function(){
+(function () {
     // function body
-})();
+}());
 ```
 
 and a perfect example of this is [setTimeout (on mobile)](https://github.com/Expensify/Mobile-Expensify/blob/18781e7c7115355a24fadcf04c6326f934ce4f7d/JavaScript/yapl.js#L218-L232).
@@ -131,11 +131,11 @@ and a perfect example of this is [setTimeout (on mobile)](https://github.com/Exp
 ```js
 this.setTimeout = (function () {
     var id = 0;
-    return function(fun, milliseconds) {
+    return function (fun, milliseconds) {
         yaplCall('yaplSetTimeout', fun, milliseconds);
         return ++id;
     };
-})();
+}());
 ```
 
 We only know of one **good reason** to use IIFEs and that is to **take advantage of closures**.
@@ -219,10 +219,10 @@ Probably one of the most important concepts (and features!) **to understand** of
 Something we see often is people creating unnecessary anonymous functions and passing them as parameters. Here's an example of what we mean
 
 ```js
-API.BankAccount_Create({ ... })
-  .done(function(){
+API.BankAccount_Create({...})
+  .done(function () {
     return deferred.resolve();
-  }).unhandled( function(){
+  }).unhandled(function () {
     return deferred.reject();
   });
 ```
@@ -240,7 +240,7 @@ invoke deferred.resolve
 Now a similar way of doing this is
 
 ```js
-API.BankAccount_Create({ ... })
+API.BankAccount_Create({...})
   .done(deferred.resolve)
   .unhandled(deferred.reject);
 ```
