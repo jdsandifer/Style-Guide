@@ -7,7 +7,6 @@ CSS Coding Standards
 2. [Formatting](#formatting)
 3. [Misc](#misc)
 4. [Examples](#examples)
-5. [CSScomb Configuration](#csscomb-configuration)
 
 ## Spacing
 
@@ -23,12 +22,15 @@ CSS Coding Standards
 ## Formatting
 
 * Sort declarations alphabetically, except for vendor prefixes, variables and mixins. Variables and mixins (like `@include` or `@extend`) always belong to the top followed by an empty line.
+ * Exception: Media query mixins (like `@include mq-tablet` or `@include mq-hd`) always belong to the bottom of declaration blocks, behind all other types of rulesets.
 * Use full 6 digits, lower cased hex color codes `#00aa00`. When using SCSS, the `rgba()` method will support hex colors as a param, e.g., `rgba(#00ff00, 0.5)`. In raw CSS it is permitted to break this rule when using `rgba()` only.
 * Use `//` for comment blocks (instead of `/* */`).
 * Use single line quotes `'` for strings, e.g. `url('http://...')`.
-* Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
+* Avoid specifying units for zero values, e.g. `margin: 0` instead of `margin: 0px`.
 * Add leading zeros as in `0.5`.
+* Always use double colons with pseudo elements (e.g. `.foo::after`) and single colons with pseudo classes (e.g. `.foo:hover`)
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
+ * When using shorthands make sure that values are as concise as possible, e.g. `margin: 0 5px` instead of `margin: 0 5px 0 5px`.
 * When using vendor prefixes align with soft spaces:
 
   ```scss
@@ -92,39 +94,5 @@ Here are some good examples that more or less apply the above guidelines:
 
 .much-better {
     content: '4 soft spaces indentation, space after colon, single quotes, semicolon';
-}
-```
-
-## CSScomb Configuration
-
-Use the following configuration when using the [CSScomb tool](http://csscomb.com/) to tidy up your files.
-
-```json
-{
-    "always-semicolon": true,
-    "block-indent": "    ",
-    "color-case": "lower",
-    "color-shorthand": false,
-    "element-case": "lower",
-    "eof-newline": true,
-    "leading-zero": true,
-    "quotes": "single",
-    "remove-empty-rulesets": true,
-    "sort-order": [["$variable"], ["$include"]],
-    "sort-order-fallback": "abc",
-    "space-after-colon": " ",
-    "space-after-combinator": " ",
-    "space-after-opening-brace": "\n",
-    "space-after-selector-delimiter": "\n",
-    "space-before-closing-brace": "\n",
-    "space-before-colon": "",
-    "space-before-combinator": " ",
-    "space-before-opening-brace": " ",
-    "space-before-selector-delimiter": "",
-    "space-between-declarations": "\n",
-    "strip-spaces": true,
-    "tab-size": true,
-    "unitless-zero": true,
-    "vendor-prefix-align": true
 }
 ```
