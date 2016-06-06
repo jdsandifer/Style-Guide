@@ -103,6 +103,101 @@ There are a few things that we have customized for our tastes which will take pr
         };
     }
     ```
+    
+## React Specific Styles
+
+* Do not use underscores when naming private methods. Most methods will be private, so just be sure to mark the public methods with `@public` in their method documentation.
+* Do not add method documentation for the built-in [lifecycle methods](https://facebook.github.io/react/docs/component-specs.html) of a component.
+* Do not add methods to your view that return pieces of things to render. Build those as [stateless components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) instead.
+* Add descriptions to all propTypes using inline comments. No need to document the types, but add some context for each property so that other developers understand the intended use.
+
+```javascript
+// bad
+{
+  propTypes: {
+    currency: React.PropTypes.string.isRequired,
+    amount: React.PropTypes.number.isRequired,
+    isIgnored: React.PropTypes.bool.isRequired
+  }
+}
+
+// bad
+{
+  propTypes: {
+    /**
+     * The currency that the reward is in
+     */
+    currency: React.PropTypes.string.isRequired,
+    /**
+     * The amount of reward
+     */
+    amount: React.PropTypes.number.isRequired,
+    /**
+     * If the reward has been ignored or not
+     */
+    isIgnored: React.PropTypes.bool.isRequired
+  }
+}
+
+// good
+{
+  propTypes: {
+    // The currency that the reward is in
+    currency: React.PropTypes.string.isRequired,
+    // The amount of reward
+    amount: React.PropTypes.number.isRequired,
+    // If the reward has been ignored or not
+    isIgnored: React.PropTypes.bool.isRequired
+  }
+}
+```
+
+* Use inline ternary statements when rendering optional pieces of templates. Notice the white space and formatting of the ternary.
+
+```javascript
+// bad
+{
+  render() {
+    const optionalTitle = this.props.title ? <div className="title">{this.props.title}</div> : null;
+    return (
+      <div>
+        {optionalTitle}
+        <div className="body">This is the body</body>
+      </div>
+    );
+  }
+}
+
+// good
+{
+  render() {
+    return (
+      <div>
+        {this.props.title ?
+          <div className="title">{this.props.title}</div>
+        : null}
+        <div className="body">This is the body</body>
+      </div>
+    );
+  }
+}
+
+// good
+{
+  render() {
+    return (
+      <div>
+        {this.props.title ?
+          <div className="title">{this.props.title}</div>
+        :
+          <div className="title">Default Title</div>
+        }
+        <div className="body">This is the body</body>
+      </div>
+    );
+  }
+}
+```
 
 # JavaScript bits of no-ledge
 
