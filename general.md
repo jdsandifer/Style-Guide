@@ -39,6 +39,7 @@ As an engineer, you should strive to keep things simple and relevant.
 - Build things that you know will need to be refactored when/if more functionality is desired in the future
 - Don't add functionality that is not in use RIGHT NOW
 - Don't engineer things that you think will have value later
+- Don't abstract anything to be reusable unless it's being actively reused
 - Don't use a class when a function will do
 
 ```php
