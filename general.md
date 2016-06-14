@@ -7,7 +7,7 @@ Language agnostic Coding Standard
 1. [Simplicity](#simplicity)
 
 ## Acronyms
-- When using acronyms, only upper case the first letter, treating it as a regular word.
+- When using acronyms, only upper case the first letter, treating it as a regular word
 
 ```PHP
    public function setUdfs($udfs)
@@ -18,7 +18,7 @@ Language agnostic Coding Standard
 
 ## Abbreviations
 - Don't use abbreviations if you can avoid it
-- When referencing an ID, you can make "ID" all caps.
+- When referencing an ID, you should make "ID" all caps
 
 ```php
    public function setReportID($id)
