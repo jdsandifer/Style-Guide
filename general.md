@@ -98,15 +98,26 @@ echo $Foo->getBar();
 // Good
 class Foo
 {
+   // Public var that we don't care if someone has access to, so no getters or setters
    public $bar;
+   
+   // Private var that would cause side effects if someone could access it
+   private $state;
    
    public function __construct($bar)
    {
       $this->bar = $bar;
+      $this->state = 'initialized';
+   }
+   
+   public function getState()
+   {
+      return $this->state;
    }
 }
 $Foo = new Foo('bar');
 echo $Foo->bar;
+echo $Foo->getState();
 ```
 
 **[⬆ back to top](#table-of-contents)**
