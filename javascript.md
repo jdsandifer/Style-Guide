@@ -162,7 +162,7 @@ There are a few things that we have customized for our tastes which will take pr
     return (
       <div>
         {optionalTitle}
-        <div className="body">This is the body</body>
+        <div className="body">This is the body</div>
       </div>
     );
   }
@@ -176,7 +176,7 @@ There are a few things that we have customized for our tastes which will take pr
         {this.props.title ?
           <div className="title">{this.props.title}</div>
         : null}
-        <div className="body">This is the body</body>
+        <div className="body">This is the body</div>
       </div>
     );
   }
