@@ -109,7 +109,7 @@ There are a few things that we have customized for our tastes which will take pr
 * Do not use underscores when naming private methods. Most methods will be private, so just be sure to mark the public methods with `@public` in their method documentation.
 * Do not add method documentation for the built-in [lifecycle methods](https://facebook.github.io/react/docs/component-specs.html) of a component.
 * Do not add methods to your view that return pieces of things to render. Build those as [stateless components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) instead.
-* Add descriptions to all propTypes using inline comments. No need to document the types, but add some context for each property so that other developers understand the intended use.
+* Add descriptions to all propTypes using a single line comment above the definition. No need to document the types, but add some context for each property so that other developers understand the intended use.
 
 ```javascript
 // bad
