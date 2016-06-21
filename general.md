@@ -83,12 +83,12 @@ class Foo
    
    public function setBar($val)
    {
-      ...
+      $this->bar = $val;
    }
    
    public function getBar()
    {
-      ...
+      return $this->bar;
    }
 }
 $Foo = new Foo('bar');
