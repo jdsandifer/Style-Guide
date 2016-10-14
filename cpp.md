@@ -26,7 +26,7 @@ Thus, a doc block for a method *must* look like this:
      * @param name     The name of the reportNameValuePair
      * @return the rNVP's value
      */
-    static std::string getValue(SQLite& db, const uint64_t reportID, const std::string& name);
+    static string getValue(SQLite& db, uint64_t reportID, const string& name);
 ```
 
 ## Namespace
@@ -35,7 +35,7 @@ The `using namespace` statement is *only* allowed on the `std` namespace. That m
 
 ## Pointers and references
 
-The `&` and `*` *must* stick to the type, like this: `const std::string& var`, `Command* cmd`.
+The `&` and `*` *must* stick to the type, like this: `const string& var`, `Command* cmd`.
 
 When using these on variables, they must stick to the variable name.
 
@@ -52,4 +52,4 @@ string foo(const string& dontChangeThis)
 
 In this case, the const reference in the parameter to `foo()` assures the caller that this function won't modify the object being passed in.
 
-Use `const` in a sparing, intentional manner, aiming for code clarity and simplicity.
+Use `const` in a sparing, intentional manner, aiming for code clarity and simplicity.  For example, do not use `const` merely because you don't *intend* to change something, use it when it is so important not to change it that you want the compiler to forbid it.
