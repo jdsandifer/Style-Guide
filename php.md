@@ -356,7 +356,27 @@ class ClassName
 }
 ```
 
-- Type hinting SHOULD be used as often as possible.
+### Type declarations and return type declarations
+
+[Type declarations](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) and [return type declarations](http://php.net/manual/en/functions.returning-values.php#functions.returning-values.type-declaration) must be used on all new code whenever possible. This includes type hinting for classes, arrays and scalar types too (int, float, string and bool).
+
+We prefer the [strict](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict) variation of type hinting, this means that when you add a new file, the php tag must look like this: `<?php declare(strict_types=1);`.
+
+Example:
+```php
+<?php declare(strict_types=1);
+function doSomething(int $anInt, float $aFloat, string $aString, bool $aBool, array $anArray, SomeClass $aClass): int
+{
+...
+}
+```
+
+This means 3 things:
+- If you pass a variable of the wrong type, an error will be raised (luckily phan will tell you too).
+- If the function returns a value of the wrong type, an error will be raised.
+- This affects to **ALL** methods/functions calls in the file, this includes built-in PHP functions (ie: strpos, date, et all).
+
+Adding type and return declarations and the `strict_types` directive to existing methods should be done with **extreme** care and preferrably adding unit tests to it.
 
 **[⬆ back to top](#table-of-contents)**
 
