@@ -356,7 +356,7 @@ class ClassName
 }
 ```
 
-### Type declaration and return type declarations
+### Type declarations and return type declarations
 
 [Type declarations](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) and [return type declarations](http://php.net/manual/en/functions.returning-values.php#functions.returning-values.type-declaration) must be used on all new code whenever possible. This includes type hinting for classes, arrays and scalar types too (int, float, string and bool).
 
