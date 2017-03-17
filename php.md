@@ -776,6 +776,7 @@ $test = 5;
 ### Bool
 
 - Must be lower case
+- For readability and maintainability it's better to have positive boolean variables names. Eg: instead of `$shouldIgnoreTriggers` use `$includeTriggers` and negate it when using the variable.
 
 **[⬆ back to top](#table-of-contents)**
 
