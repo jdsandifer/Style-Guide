@@ -40,6 +40,7 @@ As an engineer, you should strive to keep things simple and relevant.
 - Don't add functionality that is not in use RIGHT NOW
 - Don't engineer things that you think will have value later
 - Don't abstract anything to be reusable unless it's being actively reused
+- Use positive boolean variables names. Eg: instead of `$shouldIgnoreTriggers` use `$includeTriggers` and negate it when using the variable.
 - Don't use a class when a function will do
 
 ```php
