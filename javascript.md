@@ -152,6 +152,7 @@ There are a few things that we have customized for our tastes which will take pr
 }
 ```
 
+### Inline Ternarys
 * Use inline ternary statements when rendering optional pieces of templates. Notice the white space and formatting of the ternary.
 
 ```javascript
@@ -192,6 +193,20 @@ There are a few things that we have customized for our tastes which will take pr
         :
           <div className="title">Default Title</div>
         }
+        <div className="body">This is the body</body>
+      </div>
+    );
+  }
+}
+
+// best
+{
+  render() {
+    return (
+      <div>
+        {this.props.title && <div className="title">{this.props.title}</div>}
+        {!this.props.title && <div className="title">Default Title</div>}
+        
         <div className="body">This is the body</body>
       </div>
     );
