@@ -158,59 +158,55 @@ There are a few things that we have customized for our tastes which will take pr
 ```javascript
 // bad
 {
-  render() {
+render() {
     const optionalTitle = this.props.title ? <div className="title">{this.props.title}</div> : null;
     return (
-      <div>
-        {optionalTitle}
-        <div className="body">This is the body</div>
-      </div>
+        <div>
+            {optionalTitle}
+            <div className="body">This is the body</div>
+        </div>
     );
-  }
 }
 
 // good
 {
-  render() {
+render() {
     return (
-      <div>
-        {this.props.title ?
-          <div className="title">{this.props.title}</div>
-        : null}
-        <div className="body">This is the body</div>
-      </div>
+        <div>
+            {this.props.title ?
+            <div className="title">{this.props.title}</div>
+            : null}
+            <div className="body">This is the body</div>
+        </div>
     );
-  }
 }
 
 // good
 {
-  render() {
+    render() {
     return (
-      <div>
-        {this.props.title ?
-          <div className="title">{this.props.title}</div>
-        :
-          <div className="title">Default Title</div>
-        }
-        <div className="body">This is the body</body>
-      </div>
+        <div>
+            {this.props.title ?
+                <div className="title">{this.props.title}</div>
+            :
+                <div className="title">Default Title</div>
+            }
+            <div className="body">This is the body</body>
+        </div>
     );
-  }
 }
 
 // best
 {
-  render() {
+    render() {
     return (
-      <div>
-        {this.props.title && <div className="title">{this.props.title}</div>}
-        {!this.props.title && <div className="title">Default Title</div>}
-        
-        <div className="body">This is the body</body>
-      </div>
+        <div>
+            {this.props.title && <div className="title">{this.props.title}</div>}
+            {!this.props.title && <div className="title">Default Title</div>}
+
+            <div className="body">This is the body</body>
+        </div>
     );
-  }
 }
 ```
 
