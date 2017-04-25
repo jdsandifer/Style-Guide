@@ -152,51 +152,67 @@ There are a few things that we have customized for our tastes which will take pr
 }
 ```
 
+### Inline Ternarys
 * Use inline ternary statements when rendering optional pieces of templates. Notice the white space and formatting of the ternary.
 
 ```javascript
 // bad
 {
-  render() {
-    const optionalTitle = this.props.title ? <div className="title">{this.props.title}</div> : null;
-    return (
-      <div>
-        {optionalTitle}
-        <div className="body">This is the body</div>
-      </div>
-    );
-  }
+    render() {
+        const optionalTitle = this.props.title ? <div className="title">{this.props.title}</div> : null;
+        return (
+            <div>
+                {optionalTitle}
+                <div className="body">This is the body</div>
+            </div>
+        );
+    }
 }
 
 // good
 {
-  render() {
-    return (
-      <div>
-        {this.props.title ?
-          <div className="title">{this.props.title}</div>
-        : null}
-        <div className="body">This is the body</div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                {this.props.title ?
+                    <div className="title">{this.props.title}</div>
+                : null}
+                <div className="body">This is the body</div>
+            </div>
+        );
+    }
 }
 
 // good
 {
-  render() {
-    return (
-      <div>
-        {this.props.title ?
-          <div className="title">{this.props.title}</div>
-        :
-          <div className="title">Default Title</div>
-        }
-        <div className="body">This is the body</body>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                {this.props.title ?
+                    <div className="title">{this.props.title}</div>
+                :
+                    <div className="title">Default Title</div>
+                }
+                <div className="body">This is the body</body>
+            </div>
+        );
+    }
 }
+
+// best
+{
+    render() {
+        return (
+            <div>
+                {this.props.title && <div className="title">{this.props.title}</div>}
+                {!this.props.title && <div className="title">Default Title</div>}
+
+                <div className="body">This is the body</body>
+            </div>
+        );
+    }
+}
+
 ```
 
 # JavaScript bits of no-ledge
