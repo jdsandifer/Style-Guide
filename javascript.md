@@ -174,7 +174,7 @@ render() {
     return (
         <div>
             {this.props.title ?
-            <div className="title">{this.props.title}</div>
+                <div className="title">{this.props.title}</div>
             : null}
             <div className="body">This is the body</div>
         </div>
