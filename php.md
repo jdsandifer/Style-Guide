@@ -11,13 +11,13 @@ PHP Coding Standard
 1. [Class](#class)
 	1. [Constants](#constants)
    	1. [Properties](#properties)
-   	1. [Methods](#methods) 
+   	1. [Methods](#methods)
 1. [Control Structures](#controlStructures)
 1. [Closures](#closures)
 1. [Variables](#variables)
 1. [SQL](#sql)
 1. [HTML](#html)
-   
+
 
 ## Introduction
 
@@ -38,7 +38,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 > N.b.: Using only spaces, and not mixing spaces with tabs, helps to avoid
 > problems with diffs, patches, history, and annotations. The use of spaces
-> also makes it easy to insert fine-grained sub-indentation for inter-line 
+> also makes it easy to insert fine-grained sub-indentation for inter-line
 > alignment.
 
 
@@ -52,7 +52,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 - Files SHOULD *either* declare symbols (classes, functions, constants, etc.)
   *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
   but SHOULD NOT do both.
-  
+
 - PHP [keywords] MUST be in lower case.
 
 - Method names and variables use the lowerCamelCase style.
@@ -251,9 +251,9 @@ class ClassName
 - Visibility MUST be declared on all methods.
 - Method names SHOULD NOT be prefixed with a single underscore to indicate
 protected or private visibility.
-- Method names MUST NOT be declared with a space after the method name. 
+- Method names MUST NOT be declared with a space after the method name.
 - The opening brace MUST go on its own line
-- The closing brace MUST go on the next line following the body. 
+- The closing brace MUST go on the next line following the body.
 - There MUST NOT be a space after the opening parenthesis
 - There MUST NOT be a space before the closing parenthesis.
 
@@ -279,7 +279,7 @@ class ClassName
 - PHPDoc MUST include parameter type then parameter name
 - Mixed type SHOULD be avoid as much as possible
 - Parameter description MAY be omitted
-- PHPDoc MUST inclde return type if the return is none void 
+- PHPDoc MUST inclde return type if the return is none void
 
 ```php
 <?php
@@ -295,7 +295,7 @@ class ClassName
     {
         // method body
     }
-    
+
     /**
      * This function tells you how awesome bob donuts ar
      *
@@ -360,11 +360,19 @@ class ClassName
 
 [Type declarations](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) and [return type declarations](http://php.net/manual/en/functions.returning-values.php#functions.returning-values.type-declaration) must be used on all new code whenever possible. This includes type hinting for classes, arrays and scalar types too (int, float, string and bool).
 
-We prefer the [strict](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict) variation of type hinting, this means that when you add a new file, the php tag must look like this: `<?php declare(strict_types=1);`.
+We prefer the [strict](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict) variation of type hinting, this means that when you add a new file, the php tag must look like this:
+```php
+<?php
+
+declare(strict_types=1);
+```
 
 Example:
 ```php
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
+
 function doSomething(int $anInt, float $aFloat, string $aString, bool $aBool, array $anArray, SomeClass $aClass): int
 {
 ...
@@ -429,10 +437,10 @@ class ClassName extends ParentClass implements
 class Yop extends Lait
 {
 	use MyAwesomeTrait;
-	
+
 	public function __construct()
 	{
-	
+
 	}
 }
 ```
@@ -546,8 +554,8 @@ keywords look like single words.
 ### switch
 
 A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. 
-- The `case` statement MUST be indented once from `switch`, and the `break` keyword (or other terminating keyword) MUST be indented at the same level as the `case` body. 
+parentheses, spaces, and braces.
+- The `case` statement MUST be indented once from `switch`, and the `break` keyword (or other terminating keyword) MUST be indented at the same level as the `case` body.
 - There MUST be a comment such as `// no break` when fall-through is intentional in a non-empty `case` body.
 
 ```php
@@ -612,7 +620,7 @@ for ($i = 0; $i < 10; $i++) {
 **[⬆ back to top](#table-of-contents)**
 
 ### foreach
-    
+
 A `foreach` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
 
@@ -833,7 +841,7 @@ $myList = [
 - Complex query MUST be exploded on multiple line
 
 ```PHP
-$query = " SELECT 
+$query = " SELECT
 				name,
 				age,
 				count(*) as nb
@@ -845,7 +853,7 @@ $query = " SELECT
 		  			f.id < 42
 		  		)
 		  		OR
-		  			name='fred' 
+		  			name='fred'
 		  	ORDER BY name DESC;"
 
 ```
@@ -902,9 +910,3 @@ $randomVariable = PolicyStore::getID();
         $this->_values['outputCurrency'] = $currency;
     }
 ```
-
-
-
-
-
-
