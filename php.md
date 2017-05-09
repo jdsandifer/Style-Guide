@@ -790,11 +790,11 @@ $test = 5;
 
 ### String
 
-- use double quote " everywhere
-- Complex variable interpolation can be done as follow
+- Use single quotes (`''`) everywhere
+- Include variables in your string by concating them with the `.` operator (with no spaces). Here's an example:
 
 ```php
-$myString = "$bob is a part of {$policy->getID()}";
+$myString = "$bob is a part of '.$policy->getID().'.';
 ```
 
 **[⬆ back to top](#table-of-contents)**
