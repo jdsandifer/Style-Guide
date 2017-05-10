@@ -790,8 +790,9 @@ $test = 5;
 
 ### String
 
-- use double quote " everywhere
-- Complex variable interpolation can be done as follow
+- Always use single quotes `'` if no variables are needed.
+- If variables are needed, prefer interpolation over concatenation as long as it doesn't hurt readability.
+- Complex variable interpolation can be done as follows:
 
 ```php
 $myString = "$bob is a part of {$policy->getID()}";
