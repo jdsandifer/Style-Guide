@@ -68,6 +68,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### PHP Tags
 
+- The opening tag `<?php` at the top of a file MUST be followed by a blank line.
+
 - PHP code MUST use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it
 MUST NOT use the other tag variations.
 
@@ -105,6 +107,7 @@ i.e, an example of what to avoid:
 
 ```php
 <?php
+
 // side effect: change ini settings
 ini_set('error_reporting', E_ALL);
 
@@ -126,6 +129,7 @@ effects; i.e., an example of what to emulate:
 
 ```php
 <?php
+
 // declaration
 function foo()
 {
@@ -164,6 +168,7 @@ For example:
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 use FooClass;
@@ -198,6 +203,7 @@ For example:
 
 ```php
 <?php
+
 namespace Vendor\Model;
 
 class Foo
@@ -277,7 +283,7 @@ class ClassName
 - PHPDoc MUST be added on every method
 - PHPDoc description MAY be omitted when the action of the method is obvious. Any push back on this during the review process MUST be followed by an addition of the description without any discussion
 - PHPDoc MUST include parameter type then parameter name
-- Mixed type SHOULD be avoid as much as possible
+- Mixed type SHOULD be avoided as much as possible
 - Parameter description MAY be omitted
 - PHPDoc MUST inclde return type if the return is none void
 
@@ -287,10 +293,10 @@ namespace Vendor\Package;
 
 class ClassName
 {
-	/**
-	 * @param string $arg1
-	 * @param array  $arg2
-	 */
+    /**
+     * @param string $arg1
+     * @param array  $arg2
+     */
     public function fooBarBaz($arg1, array $arg2 = [])
     {
         // method body
@@ -321,6 +327,7 @@ list.
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 class ClassName
@@ -342,6 +349,7 @@ between them.
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 class ClassName
@@ -398,6 +406,7 @@ the class name.
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 use FooClass;
@@ -416,6 +425,7 @@ MUST be on the next line, and there MUST be only one interface per line.
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 use FooClass;
@@ -458,6 +468,7 @@ declaration.
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 abstract class ClassName
@@ -485,6 +496,7 @@ each comma, and there MUST be one space after each comma.
 
 ```php
 <?php
+
 bar();
 $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
@@ -496,6 +508,7 @@ next line, and there MUST be only one argument per line.
 
 ```php
 <?php
+
 $foo->bar(
     $longArgument,
     $longerArgument,
@@ -534,6 +547,7 @@ closing brace from the earlier body.
 
 ```php
 <?php
+
 if ($expr1) {
     // if body
 } elseif ($expr2) {
@@ -560,6 +574,7 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
+
 switch ($expr) {
     case 0:
         echo 'First case, with a break';
@@ -588,6 +603,7 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
+
 while ($expr) {
     // structure body
 }
@@ -598,6 +614,7 @@ of parentheses, spaces, and braces.
 
 ```php
 <?php
+
 do {
     // structure body;
 } while ($expr);
@@ -612,6 +629,7 @@ spaces, and braces.
 
 ```php
 <?php
+
 for ($i = 0; $i < 10; $i++) {
     // for body
 }
@@ -626,6 +644,7 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
+
 foreach ($iterable as $key => $value) {
     // foreach body
 }
@@ -641,6 +660,7 @@ parentheses, spaces, and braces.
 
 ```php
 <?php
+
 try {
     // try body
 } catch (FirstExceptionType $e) {
@@ -677,6 +697,7 @@ parentheses, commas, spaces, and braces:
 
 ```php
 <?php
+
 $closureWithArgs = function ($arg1, $arg2) {
     // body
 };
@@ -700,6 +721,7 @@ variable lists split across multiple lines.
 
 ```php
 <?php
+
 $longArgs_noVars = function (
     $longArgument,
     $longerArgument,
@@ -750,6 +772,7 @@ in a function or method call as an argument.
 
 ```php
 <?php
+
 $foo->bar(
     $arg1,
     function ($arg2) use ($var1) {
@@ -772,7 +795,6 @@ $test = 5;
 
 
 ### Null
-
 
 - MUST be lower case
 - Use mosty to indicate that something is not instanciated or wrong
