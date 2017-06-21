@@ -64,7 +64,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 **[⬆ back to top](#table-of-contents)**
 
 
-##Files
+## Files
 
 ### PHP Tags
 
@@ -767,7 +767,6 @@ $foo->bar(
 - Variable assignement MUST have a space before and after the equal sign
 
 ```PHP
-
 $test = 5;
 ```
 
@@ -825,10 +824,29 @@ $b = array();
 
 ```PHP
 $myList = [
-	'a',
-	'b',
-	'c',
+    'a',
+    'b',
+    'c',
 ];
+```
+
+#### Accessing arrays
+
+- Usage of the internal helper mfunction `ArrayUtils::get()` is deprecated
+- Use the [null coalescing operator](http://php.net/manual/de/migration70.new-features.php#migration70.new-features.null-coalesce-op) to access values in an array (single- or multi-dimensional) while also providing a default fallback
+
+```php
+$array = [
+    'foo' => [
+        'bar' => 'value',
+    ],
+];
+
+// Deprecated
+$value = ArrayUtils::get($array, ['foo', 'bar'], 'default');
+
+// Good
+$value = $array['foo']['bar'] ?? 'default';
 ```
 
 **[⬆ back to top](#table-of-contents)**
