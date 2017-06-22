@@ -254,6 +254,7 @@ class ClassName
 
 ### Methods
 
+- Magic methods MUST NOT be used
 - Visibility MUST be declared on all methods.
 - Method names SHOULD NOT be prefixed with a single underscore to indicate
 protected or private visibility.
