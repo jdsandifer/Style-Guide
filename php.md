@@ -87,6 +87,30 @@ MUST NOT use the other tag variations.
 **[⬆ back to top](#table-of-contents)**
 
 
+### Token alignment
+
+Aligning tokens should be avoided as it rarely aids in readability and often
+produces inconsistencies and larger diffs when updating the code.
+
+```php
+// Good
+$foo = [
+    'foo' => 'bar',
+    'foobar' => 'foobar',
+    'foobarbaz' => 'foobarbaz',
+];
+
+// Bad
+$foo = [
+    'foo'       => 'bar',
+    'foobar'    => 'foobar',
+    'foobarbaz' => 'foobarbaz',
+];
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
 ### Side Effects
 
 A file SHOULD declare new symbols (classes, functions, constants,

@@ -74,6 +74,24 @@ There are a few things that we have customized for our tastes which will take pr
     // good
     const foo = {clark: 'kent'};
     ```
+  - Aligning tokens should be avoided as it rarely aids in readability and ofte
+  produces inconsistencies and larger diffs when updating the code.
+
+    ```javascript
+    // Good
+    const foo = {
+        foo: 'bar',
+        foobar: 'foobar',
+        foobarbaz: 'foobarbaz',
+    };
+
+    // Bad
+    const foo = {
+        foo      : 'bar',
+        foobar   : 'foobar',
+        foobarbaz: 'foobarbaz',
+    }
+    ```
 
 ## Naming Conventions
   - When saving a reference to `this` use `self`.
