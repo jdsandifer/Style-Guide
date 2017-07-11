@@ -233,9 +233,9 @@ protected or private visibility.
 // Good
 class ClassName
 {
-	/**
-	 * @var null|string
-	 */
+    /**
+     * @var null|string
+     */
     public $foo = null;
 }
 
