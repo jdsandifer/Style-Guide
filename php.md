@@ -17,6 +17,7 @@ PHP Coding Standard
 1. [Variables](#variables)
 1. [SQL](#sql)
 1. [HTML](#html)
+1. [Blank Lines](#blankLines)
 
 
 ## Introduction
@@ -937,7 +938,31 @@ $query = " SELECT
 
 ## PHPDocs
 
-- PHPDocs MUST be used as much as possible to define type of parameters, variable, constant, etc
+- PHPDocs are to be avoided if they don't provide any additional useful information,
+for example, when using php7 type hinting and not adding a description.
+- When not using php7 type hinting, use PHPDocs to define the type of parameters and provide additional description for them when necessary.
+
+
+```php
+// Good
+public function __construct(Client $client)
+{
+    $this->client = $client;
+}
+
+// Bad
+/**
+ * Constructor.
+ *
+ * @param Client $client
+ */
+public function __construct(Client $client)
+{
+    $this->client = $client;
+}
+```
+
+- PHPDocs MUST be used as much as possible to define types of variables and constants.
 - When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
 
 ```PHP
@@ -976,3 +1001,34 @@ $randomVariable = PolicyStore::getID();
         $this->_values['outputCurrency'] = $currency;
     }
 ```
+
+## Blank Lines
+
+- Consolidate code into obvious blocks that are self-explanatory, and then comment those blocks with a useful comment
+- Avoid unnecessary blank lines. If you add one, that suggest the following block of code is functionally different and thus can benefit from a comment
+
+```php
+// Good
+// This is a comment summarizing a block of code
+thisIsSomeCode();
+thisIsSomeCode();
+thisIsSomeCode();
+
+// Blank lines separate blocks of code; each block of code has a comment
+// therefore there should be a comment after each blank line.  If it doesn't
+// seem appropriate to have a comment, then it means it probably isn't
+// appropriate to split into a new block of code, and thus the blank line
+// should be removed.
+moreCode();
+
+// Bad
+// This is a comment summarizing a block of code
+thisIsSomeCode();
+thisIsSomeCode();
+
+thisIsSomeCode();
+
+moreCode();
+```
+
+**[⬆ back to top](#table-of-contents)**
