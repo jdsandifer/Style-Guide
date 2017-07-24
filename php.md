@@ -987,7 +987,7 @@ $randomVariable = PolicyStore::getID();
 - Scalar type are lower case
 - The description of a function must explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
 - Jump a line between the description and the list of parameter
-- Description of parameter can be omit when they are really obvious
+- Docs of parameters can be omitted entirely when they are really obvious
 
 ```PHP
     /**
