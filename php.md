@@ -938,9 +938,8 @@ $query = " SELECT
 
 ## PHPDocs
 
-- PHPDocs are to be avoided if they don't provide any additional useful information,
-for example, when using php7 type hinting and not adding a description.
-- When not using php7 type hinting, use PHPDocs to define the type of parameters and provide additional description for them when necessary.
+- PHP type hinting *must* be used for parameters and return values when on php7.
+- PHPDocs *should* be avoided if they don't provide any additional useful information,
 
 
 ```php
@@ -962,8 +961,8 @@ public function __construct(Report $report)
 }
 ```
 
-- PHPDocs MUST be used as much as possible to define types of variables and constants.
-- When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
+- When function is deprecated in favor of an other one, the `@deprecated` *must* be used
+- The `@deprecatd` *must* be followed by the replacement function name
 
 ```PHP
 /**
@@ -976,18 +975,17 @@ function ValidateSession()
 }
 ```
 
-- If it makes sense, add PHPDocs on variable
+- PHPDocs *should* be used on variables, if they add value
 
 ```PHP
 /** @var Policy */
 $randomVariable = PolicyStore::getID();
 ```
 
-- Type of the parameters MUST be written before the variable name
-- Scalar type are lower case
-- The description of a function must explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
-- Jump a line between the description and the list of parameter
-- Docs of parameters can be omitted entirely when they are really obvious
+- Type of the parameters *must* be written before the variable name
+- Scalar types *must* be lower case
+- The description of a function *must* explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
+- A blank line *must* be added between the description and the list of parameter
 
 ```PHP
     /**
@@ -1004,8 +1002,8 @@ $randomVariable = PolicyStore::getID();
 
 ## Blank Lines
 
-- Consolidate code into obvious blocks that are self-explanatory, and then comment those blocks with a useful comment
-- Avoid unnecessary blank lines. If you add one, that suggest the following block of code is functionally different and thus can benefit from a comment
+- Blocks of code that are self-explanatory *should* be consolidated and preceded by a useful comment
+- Unnecessary blank lines without comments *should* be avoided. If you add one, that suggest the following block of code is functionally different and thus can benefit from a comment
 
 ```php
 // Good
