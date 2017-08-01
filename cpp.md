@@ -8,8 +8,7 @@ The only notable difference with the PHP style is that concatenation operators *
 ## Documentation
 
 
-- Only document params and return values when they're not obvious.
-- Avoid docs that don't add any additional useful information (eg, `@param reportID` in the code below is useless because because both the type and the name of the param are in the signature).
+- Docs for params and return values *should* be avoided, unless they add useful additional information (eg, `@param reportID` in the code below is useless because because both the type and the name of the param are in the signature).
 - Docs for methods *must* be in the header files.
 - Each parameter *must* be documented using the following format: `* @param paramName description`. The description is required, otherwise it's just redundant information.
 - Return values *must* be documented using the following format: `* @return description`. Similarly, the description is required, otherwise the docs are pointless.
