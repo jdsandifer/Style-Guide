@@ -945,20 +945,20 @@ for example, when using php7 type hinting and not adding a description.
 
 ```php
 // Good
-public function __construct(Client $client)
+public function __construct(Report $report)
 {
-    $this->client = $client;
+    $this->report = $report;
 }
 
 // Bad
 /**
  * Constructor.
  *
- * @param Client $client
+ * @param Report $report
  */
-public function __construct(Client $client)
+public function __construct(Report $report)
 {
-    $this->client = $client;
+    $this->report = $report;
 }
 ```
 
