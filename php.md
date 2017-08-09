@@ -939,7 +939,7 @@ $query = " SELECT
 ## PHPDocs
 
 - PHP type hinting *must* be used for parameters and return values when on php7.
-- PHPDocs *should* be avoided if they don't provide any additional useful information,
+- PHPDocs *should* be avoided if they don't provide any additional useful information.
 
 
 ```php
