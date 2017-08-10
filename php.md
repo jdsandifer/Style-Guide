@@ -310,7 +310,7 @@ class ClassName
 - PHPDoc MUST include parameter type then parameter name
 - Mixed type SHOULD be avoided as much as possible
 - Parameter description MAY be omitted
-- PHPDoc MUST inclde return type if the return is none void
+- PHPDoc MUST include return type if the return is none void
 
 ```php
 <?php
