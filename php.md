@@ -17,6 +17,7 @@ PHP Coding Standard
 1. [Variables](#variables)
 1. [SQL](#sql)
 1. [HTML](#html)
+1. [Blank Lines](#blankLines)
 
 
 ## Introduction
@@ -937,8 +938,31 @@ $query = " SELECT
 
 ## PHPDocs
 
-- PHPDocs MUST be used as much as possible to define type of parameters, variable, constant, etc
-- When function is deprecated in favor of an other one, use the `@deprecated` tag followed by the replacement function
+- PHP type hinting *must* be used for parameters and return values when on php7.
+- PHPDocs *should* be avoided if they don't provide any additional useful information.
+
+
+```php
+// Good
+public function __construct(Report $report)
+{
+    $this->report = $report;
+}
+
+// Bad
+/**
+ * Constructor.
+ *
+ * @param Report $report
+ */
+public function __construct(Report $report)
+{
+    $this->report = $report;
+}
+```
+
+- When function is deprecated in favor of an other one, the `@deprecated` *must* be used
+- The `@deprecatd` *must* be followed by the replacement function name
 
 ```PHP
 /**
@@ -951,18 +975,17 @@ function ValidateSession()
 }
 ```
 
-- If it makes sense, add PHPDocs on variable
+- PHPDocs *should* be used on variables, if they add value
 
 ```PHP
 /** @var Policy */
 $randomVariable = PolicyStore::getID();
 ```
 
-- Type of the parameters MUST be written before the variable name
-- Scalar type are lower case
-- The description of a function must explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
-- Jump a line between the description and the list of parameter
-- Description of parameter can be omit when they are really obvious
+- Type of the parameters *must* be written before the variable name
+- Scalar types *must* be lower case
+- The description of a function *must* explain what the function is doing from an external point of view. If you need to explain how the function is working, add a comment inside the body of the function
+- A blank line *must* be added between the description and the list of parameter
 
 ```PHP
     /**
@@ -976,3 +999,34 @@ $randomVariable = PolicyStore::getID();
         $this->_values['outputCurrency'] = $currency;
     }
 ```
+
+## Blank Lines
+
+- Blocks of code that are self-explanatory *should* be consolidated and preceded by a useful comment
+- Unnecessary blank lines without comments *should* be avoided. If you add one, that suggest the following block of code is functionally different and thus can benefit from a comment
+
+```php
+// Good
+// This is a comment summarizing a block of code
+thisIsSomeCode();
+thisIsSomeCode();
+thisIsSomeCode();
+
+// Blank lines separate blocks of code; each block of code has a comment
+// therefore there should be a comment after each blank line.  If it doesn't
+// seem appropriate to have a comment, then it means it probably isn't
+// appropriate to split into a new block of code, and thus the blank line
+// should be removed.
+moreCode();
+
+// Bad
+// This is a comment summarizing a block of code
+thisIsSomeCode();
+thisIsSomeCode();
+
+thisIsSomeCode();
+
+moreCode();
+```
+
+**[⬆ back to top](#table-of-contents)**
