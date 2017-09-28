@@ -908,20 +908,19 @@ $value = $array['foo']['bar'] ?? 'default';
 - Complex query MUST be exploded on multiple line
 
 ```PHP
-$query = " SELECT
-				name,
-				age,
-				count(*) as nb
-		  	FROM receipts r
-		  	JOIN fun f ON f.id = r.fID
-		  	WHERE
-		  		(
-		  			f.id > 5 AND
-		  			f.id < 42
-		  		)
-		  		OR
-		  			name='fred'
-		  	ORDER BY name DESC;"
+$query = "SELECT
+            name,
+	    age,
+	    COUNT(*) AS nb
+	  FROM receipts r
+	  JOIN fun f ON f.id = r.fID
+	  WHERE
+	    (
+		f.id > 5 AND
+		f.id < 42
+	    ) OR
+	    name = 'fred'
+	  ORDER BY name DESC;"
 
 ```
 
