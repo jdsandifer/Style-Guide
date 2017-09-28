@@ -911,7 +911,7 @@ $value = $array['foo']['bar'] ?? 'default';
 $query = "SELECT
             name,
 	    age,
-	    count(*) as nb
+	    COUNT(*) AS nb
 	  FROM receipts r
 	  JOIN fun f ON f.id = r.fID
 	  WHERE
@@ -919,7 +919,7 @@ $query = "SELECT
 		f.id > 5 AND
 		f.id < 42
 	    ) OR
-	    name='fred'
+	    name = 'fred'
 	  ORDER BY name DESC;"
 
 ```
