@@ -98,13 +98,13 @@ There are a few things that we have customized for our tastes which will take pr
   
     ```javascript
     // Bad
-    var onSubmitClick = function() {
+    var onSubmitClick = function () {
         // Validate form items and submit form
     };
     $('.submit').click(onSubmitClick);
     
     // Good
-    var validateAndSubmit = function() {
+    var validateAndSubmit = function () {
         // Validate form items and submit form
     };
     $('.submit').click(validateAndSubmit);
