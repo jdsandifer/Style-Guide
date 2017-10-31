@@ -101,13 +101,13 @@ There are a few things that we have customized for our tastes which will take pr
     var onSubmitClick = function() {
         // Validate form items and submit form
     };
-    $('.submit').onSubmitClick(onClick);
+    $('.submit').click(onSubmitClick);
     
     // Good
     var validateAndSubmit = function() {
         // Validate form items and submit form
     };
-    $('.submit').onClick(validateAndSubmit);
+    $('.submit').click(validateAndSubmit);
     ```
   
   - When saving a reference to `this` use `self`.
