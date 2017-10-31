@@ -10,12 +10,12 @@ There are a few things that we have customized for our tastes which will take pr
   - Always wrap the function expression for immediately-invoked function expressions (IIFE) in parens:
 
     ```javascript
-    // bad
+    // Bad
     (function () {
         console.log('Welcome to the Internet. Please follow me.');
     }());
 
-    // good
+    // Good
     (function () {
         console.log('Welcome to the Internet. Please follow me.');
     })();
@@ -25,17 +25,17 @@ There are a few things that we have customized for our tastes which will take pr
   - Use soft tabs set to 4 spaces.
 
     ```javascript
-    // bad
+    // Bad
     function () {
     ∙∙const name;
     }
 
-    // bad
+    // Bad
     function () {
     ∙const name;
     }
 
-    // good
+    // Good
     function () {
     ∙∙∙∙const name;
     }
@@ -44,22 +44,22 @@ There are a few things that we have customized for our tastes which will take pr
   - Place 1 space before the function keyword and the opening paren for anonymous functions. This does not count for named functions.
 
     ```javascript
-    // bad
+    // Bad
     function() {
         ...
     }
     
-    // bad
+    // Bad
     function getValue (element) {
         ...
     }
 
-    // good
+    // Good
     function∙() {
         ...
     }
     
-    // good
+    // Good
     function getValue(element) {
         ...
     }
@@ -68,10 +68,10 @@ There are a few things that we have customized for our tastes which will take pr
   - Do not add spaces inside curly braces.
 
     ```javascript
-    // bad
+    // Bad
     const foo = { clark: 'kent' };
 
-    // good
+    // Good
     const foo = {clark: 'kent'};
     ```
   - Aligning tokens should be avoided as it rarely aids in readability and ofte
@@ -94,10 +94,26 @@ There are a few things that we have customized for our tastes which will take pr
     ```
 
 ## Naming Conventions
+  - When you have an event handler, do not prefix it with "on". The method should be named for what it does, not what it handles.
+  
+    ```javascript
+    // Bad
+    var onSubmitClick = function() {
+        // Validate form items and submit form
+    };
+    $('.submit').onSubmitClick(onClick);
+    
+    // Good
+    var validateAndSubmit = function() {
+        // Validate form items and submit form
+    };
+    $('.submit').onClick(validateAndSubmit);
+    ```
+  
   - When saving a reference to `this` use `self`.
 
     ```javascript
-    // bad
+    // Bad
     function () {
         var _this = this;
         return function () {
@@ -105,7 +121,7 @@ There are a few things that we have customized for our tastes which will take pr
         };
     }
 
-    // bad
+    // Bad
     function () {
         var that = this;
         return function () {
@@ -113,7 +129,7 @@ There are a few things that we have customized for our tastes which will take pr
         };
     }
 
-    // good
+    // Good
     function () {
         var self = this;
         return function () {
@@ -130,7 +146,7 @@ There are a few things that we have customized for our tastes which will take pr
 * Add descriptions to all propTypes using a single line comment above the definition. No need to document the types, but add some context for each property so that other developers understand the intended use.
 
 ```javascript
-// bad
+// Bad
 {
   propTypes: {
     currency: React.PropTypes.string.isRequired,
@@ -139,7 +155,7 @@ There are a few things that we have customized for our tastes which will take pr
   }
 }
 
-// bad
+// Bad
 {
   propTypes: {
     /**
@@ -157,7 +173,7 @@ There are a few things that we have customized for our tastes which will take pr
   }
 }
 
-// good
+// Good
 {
   propTypes: {
     // The currency that the reward is in
@@ -174,7 +190,7 @@ There are a few things that we have customized for our tastes which will take pr
 * Use inline ternary statements when rendering optional pieces of templates. Notice the white space and formatting of the ternary.
 
 ```javascript
-// bad
+// Bad
 {
     render() {
         const optionalTitle = this.props.title ? <div className="title">{this.props.title}</div> : null;
@@ -187,7 +203,7 @@ There are a few things that we have customized for our tastes which will take pr
     }
 }
 
-// good
+// Good
 {
     render() {
         return (
@@ -201,7 +217,7 @@ There are a few things that we have customized for our tastes which will take pr
     }
 }
 
-// good
+// Good
 {
     render() {
         return (
@@ -217,7 +233,7 @@ There are a few things that we have customized for our tastes which will take pr
     }
 }
 
-// best
+// Best
 {
     render() {
         return (
