@@ -8,7 +8,7 @@ The only notable difference with the PHP style is that concatenation operators *
 ## Documentation
 
 
-- Docs for params and return values *should* be avoided, unless they add useful additional information (eg, `@param reportID` in the code below is useless because because both the type and the name of the param are in the signature).
+- Docs for functions, params and return values *should* be ommitted, unless they add useful additional information (eg, `@param reportID` in the code below is useless because because both the type and the name of the param are in the signature).
 - Docs for methods *must* be in the header files.
 - Each parameter *must* be documented using the following format: `* @param paramName description`. The description is required, otherwise it's just redundant information.
 - Return values *must* be documented using the following format: `* @return description`. Similarly, the description is required, otherwise the docs are pointless.
@@ -36,6 +36,19 @@ static string getValue(SQLite& db, uint64_t reportID, const string& name);
  * @return the rNVP's value
  */
 static string getValue(SQLite& db, uint64_t reportID, const string& name);
+
+// Good
+static bool isDeleted(SQLite& db, const int64_t receiptID);
+
+// Bad (unnecessary)
+/**
+ * Checks if a receipt is deleted
+ *
+ * @param db
+ * @param receiptID
+ * @return whether or not the receipt is deleted
+ */
+static bool isDeleted(SQLite& db, const int64_t receiptID);
 ```
 
 ## Namespace
