@@ -11,6 +11,7 @@ Please propose modifications through pull requests.
 * [PHP](https://github.com/Expensify/Style-Guide/blob/master/php.md)
 * [SQL](https://github.com/Expensify/Style-Guide/blob/master/sql.md)
 * [C++](https://github.com/Expensify/Style-Guide/blob/master/cpp.md)
+* [Swift](https://github.com/Expensify/Style-Guide/blob/master/swift.md)
 
 # Other
 * [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
