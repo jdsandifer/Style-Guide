@@ -931,6 +931,24 @@ $query = "SELECT
 
 - For complex HTML pages, you MUST use a templating engine
 - The PHP short tag `<?=` can be used to print $variable
+- When adding control structures in templates (if, for, etc) the markup inside them must be intended, same as code would. Good:
+```
+<p>Some html</p>
+<% if (something) { %>
+  <p>Yes</p>
+<% } else { %>
+  <p>No</p>
+<% } %>
+```
+Bad:
+```
+<p>Some html</p>
+<% if (something) { %>
+<p>Yes</p>
+<% } else { %>
+<p>No</p>
+<% } %>
+```
 
 **[⬆ back to top](#table-of-contents)**
 
