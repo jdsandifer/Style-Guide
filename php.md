@@ -936,7 +936,7 @@ public function __construct(Report $report)
 }
 ```
 
-- PHPDocs *must* document all exceptions being thrown only in the first level using `@throws` tag
+- PHPDocs *must* document all exceptions being thrown only in the first level (read: only exceptions which are being thrown directly by the method itself) using `@throws` tag
 
 ```php
 // Good
@@ -992,14 +992,6 @@ function ValidateSession()
     }
 ```
 
-- PHPDocs *should* be used on variables, if they add value
-
-```PHP
-$emails = array_values(array_unique(array_map(function ($reportAction) {
-    /* @var Report_Action_Item $reportAction */
-    return $reportAction->getActorEmail();
-}, $report->getActionList()->toArray())));
-```
 
 ## Blank Lines
 
