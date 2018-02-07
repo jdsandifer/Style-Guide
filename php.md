@@ -259,9 +259,9 @@ protected or private visibility.
 class ClassName
 {
     /**
-     * @var null|string
+     * @var int
      */
-    public $foo = null;
+    public $foo = 5;
 }
 
 // Bad
@@ -294,6 +294,7 @@ parentheses, commas, spaces, and braces:
 
 ```php
 <?php
+
 namespace Vendor\Package;
 
 class ClassName
@@ -303,42 +304,8 @@ class ClassName
         // method body
     }
 }
-```   
+```
 
-
-- PHPDoc MUST be added on every method
-- PHPDoc description MAY be omitted when the action of the method is obvious. Any push back on this during the review process MUST be followed by an addition of the description without any discussion
-- PHPDoc MUST include parameter type then parameter name
-- Mixed type SHOULD be avoided as much as possible
-- Parameter description MAY be omitted
-- PHPDoc MUST include return type if the return is none void
-
-```php
-<?php
-namespace Vendor\Package;
-
-class ClassName
-{
-    /**
-     * @param string $arg1
-     * @param array  $arg2
-     */
-    public function fooBarBaz($arg1, array $arg2 = [])
-    {
-        // method body
-    }
-
-    /**
-     * This function tells you how awesome bob donuts ar
-     *
-     * @return int
-     */
-    public function bob()
-    {
-    	return 42;
-    }
-}
-```   
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -825,14 +792,10 @@ $test = 5;
 - MUST be lower case
 - Use mosty to indicate that something is not instanciated or wrong
 
-**[⬆ back to top](#table-of-contents)**
-
 
 ### Bool
 
 - Must be lower case
-
-**[⬆ back to top](#table-of-contents)**
 
 
 ### String
@@ -845,14 +808,10 @@ $test = 5;
 $myString = "$bob is a part of {$policy->getID()}";
 ```
 
-**[⬆ back to top](#table-of-contents)**
-
 
 ### Number
 
 - PHPDoc can use int or integer
-
-**[⬆ back to top](#table-of-contents)**
 
 
 ### Array
@@ -899,8 +858,8 @@ $value = $array['foo']['bar'] ?? 'default';
 
 **[⬆ back to top](#table-of-contents)**
 
-## SQL
 
+## SQL
 
 - Every dynamic parameter of a query MUST be escape before being used, even if it is a constant.
 - SQL keywords MUST be UPPER CASE.
@@ -955,9 +914,8 @@ Bad:
 
 ## PHPDocs
 
-- PHP type hinting *must* be used for parameters and return values when on php7.
+- PHP type hinting *must* be used for parameters and return values when on PHP7.
 - PHPDocs *should* be avoided if they don't provide any additional useful information.
-
 
 ```php
 // Good
@@ -978,7 +936,31 @@ public function __construct(Report $report)
 }
 ```
 
-- When function is deprecated in favor of an other one, the `@deprecated` *must* be used
+- PHPDocs *must* document all exceptions being thrown only in the first level (read: only exceptions which are being thrown directly by the method itself) using `@throws` tag
+
+```php
+// Good
+/**
+ * @throws ExpError
+ */
+public function __construct(Report $report)
+{
+    throw new ExpError('47A45CA6-72D1-49CF-9031-AF29D58507DF', "Parameter has an invalid value");
+}
+
+// Bad
+// Do not add this @throws tag just because somewhere down the call tree that given exception might be thrown
+/**
+ * @throws \GuzzleHttp\Exception\GuzzleException
+ */
+public function __construct(Report $report)
+{
+    $intercom = new IntercomClient();
+    $intercom->tagUsersByEmail('Tag', ['florian@expensify.com']);
+}
+```
+
+- When function is deprecated in favor of an other one, the `@deprecated` tag *must* be used
 - The `@deprecatd` *must* be followed by the replacement function name
 
 ```PHP
@@ -990,13 +972,6 @@ function ValidateSession()
     Log::deprecated("ValidateSession: use Authentication::validateSessionOrRedirect");
     Authentication::validateSessionOrRedirect();
 }
-```
-
-- PHPDocs *should* be used on variables, if they add value
-
-```PHP
-/** @var Policy */
-$randomVariable = PolicyStore::getID();
 ```
 
 - Type of the parameters *must* be written before the variable name
@@ -1016,6 +991,7 @@ $randomVariable = PolicyStore::getID();
         $this->_values['outputCurrency'] = $currency;
     }
 ```
+
 
 ## Blank Lines
 
