@@ -3,11 +3,13 @@
 
 ```SQL
 SELECT
-    field1           AS field1,
-    longFieldName    AS lfn,
-    IF( expr, 1, 2 ) AS exprColumn
+    field1 AS field1,
+    longFieldName AS lfn,
+    IF(expr, 1, 2) AS exprColumn
 FROM tbl AS a
-LEFT JOIN reltbl AS b ON a.parentID = b.relatedID AND a.parentID2 = b.relatedID2
+LEFT JOIN reltbl AS b
+  ON a.parentID = b.relatedID
+  AND a.parentID2 = b.relatedID2
 INNER JOIN (
     SELECT
     FROM
@@ -22,5 +24,9 @@ WHERE a = 1
   )
 GROUP BY 1, 2
 ORDER BY 1
-LIMIT 100
+LIMIT 100;
 ```
+
+_Notes_:
+- When writing SQLite queries, you **should** prefer explicit `INNER JOIN` statements over implicit `JOIN`s.
+- All SQL keywords **must** be capitalized.
