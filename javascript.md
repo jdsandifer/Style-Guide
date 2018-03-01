@@ -253,7 +253,7 @@ There are a few things that we have customized for our tastes which will take pr
 
 ## Module Pattern
 
-When you hear "module pattern" in the context of javascript think singleton pattern. The way singletons or modules are usually implemented in js is by using a plain js object. Typically
+When you hear "module pattern" in the context of JavaScript think singleton pattern. The way singletons or modules are usually implemented in JS is by using a plain JS object. Typically
 
 We set variables and functions as properties of the object so you won't see prototype anywhere in a module.
 Variables are prefixed with `_` since they're usually "private" to the module and if they're made available to the outside world it's usually through getters and setters
@@ -287,7 +287,7 @@ We only know of one **good reason** to use IIFEs and that is to **take advantage
 
 What the code above does is define a function that returns a closure and immediately invoke the function. You can think of a closure like a box with two things in it: a function and a context where the context is just a collection of variables that are available to the function. In the case above the IIFE defines (and invokes) a function that returns a closure: the inner function + the variable `id`.
 
-Closures are used in js to emulate private variables. In js there's no such thing as private variables (surprise!) but by leveraging closures you can emulate private variables and this is illustrated in the `setTimeout` example above where the variable id is inaccessible from outside of that function.
+Closures are used in JS to emulate private variables. In JS there's no such thing as private variables (surprise!) but by leveraging closures you can emulate private variables and this is illustrated in the `setTimeout` example above where the variable id is inaccessible from outside of that function.
 
 Note that we **do not recommend using IIFEs to emulate private variables** in Expensify's code bases because the convention of prefixing private variables with an underscore serves the same purpose and allows you to access the variables from outside the function **for debugging purposes**: think about accessing these from the Safari / Chrome console while debugging our iOS or web app.
 
@@ -341,13 +341,13 @@ renderApplication(appRenderer);
 
 ## Publisher / Subscriber
 
-This one isn't specific to js but we think it's worth mentioning because
+This one isn't specific to JS but we think it's worth mentioning because
 
-1.- We use it heavily on web and mobile
+1. We use it heavily on web and mobile.
 
-2.- We should be using it more on mobile
+2. We should be using it more on mobile.
 
-3.- For new hires?
+3. We want new hires to understand it.
 
 The publisher / subscriber pattern helps decouple objects from one another by changing the paradigm a bit from having objects directly call one another (thus coupling one to the public API of the other) to having objects publish (send / emit) events or messages while others subscribe (react) to them and using an event bus to send and receive these messages, which in our case is the `PubSub` library.
 
