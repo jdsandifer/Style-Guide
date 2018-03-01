@@ -15,6 +15,3 @@ Please propose modifications through pull requests.
 
 # Other
 * [General Best Practices](https://github.com/Expensify/Style-Guide/blob/master/general.md)
-* [API](https://github.com/Expensify/Style-Guide/blob/master/api.md)
-
-
