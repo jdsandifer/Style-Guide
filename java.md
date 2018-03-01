@@ -11,7 +11,7 @@
  
 ## Introduction
 
-Our Java style guide is tightly based on the [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html), with a few notable differences. This document focuses on style guides and coding standards that differ from, or extend it. If a rule is not defined in this document, assume the Google style should be used.
+Our Java style guide is tightly based on the [Google Java Style](https://google.github.io/styleguide/javaguide.html), with a few notable differences. This document focuses on style guides and coding standards that differ from, or extend it. If a rule is not defined in this document, assume the Google style should be used.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -19,7 +19,7 @@ Our Java style guide is tightly based on the [Google Java Style](https://google-
 
 ### Class member ordering
 
-From [Google's style guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html#s3.4.2-class-member-ordering):
+From [Google's style guide](https://google.github.io/styleguide/javaguide.html#s3.4.2-ordering-class-contents):
 > The ordering of the members of a class can have a great effect on learnability, but there is no single correct recipe for how to do it. Different classes may order their members differently.
 
 > What is important is that each class order its members in ___some___ _logical order_, which its maintainer could explain if asked. For example, new methods are not just habitually added to the end of the class, as that would yield "chronological by date added" ordering, which is not a logical ordering.
