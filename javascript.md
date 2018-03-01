@@ -90,7 +90,7 @@ There are a few things that we have customized for our tastes which will take pr
         foo      : 'bar',
         foobar   : 'foobar',
         foobarbaz: 'foobarbaz',
-    }
+    };
     ```
 
 ## Naming Conventions
@@ -268,7 +268,7 @@ In Expensify this looks like this
 ```js
 (function () {
     // function body
-}());
+})();
 ```
 
 and a perfect example of this is [setTimeout (on mobile)](https://github.com/Expensify/Mobile-Expensify/blob/18781e7c7115355a24fadcf04c6326f934ce4f7d/JavaScript/yapl.js#L218-L232).
@@ -280,7 +280,7 @@ this.setTimeout = (function () {
         yaplCall('yaplSetTimeout', fun, milliseconds);
         return ++id;
     };
-}());
+})();
 ```
 
 We only know of one **good reason** to use IIFEs and that is to **take advantage of closures**.
@@ -323,7 +323,7 @@ var appRenderer = ConsoleRenderer;
     };
 
     renderer.render(app);
-}(appRenderer));
+})(appRenderer);
 
 // The alternative with clearer syntax
 // Note that in this case renderApplication is added to the current scope
