@@ -12,12 +12,13 @@ PHP Coding Standard
 	1. [Constants](#constants)
    	1. [Properties](#properties)
    	1. [Methods](#methods)
-1. [Control Structures](#controlStructures)
+1. [Control Structures](#control-structures)
 1. [Closures](#closures)
 1. [Variables](#variables)
 1. [SQL](#sql)
 1. [HTML](#html)
-1. [Blank Lines](#blankLines)
+1. [PHPDocs](#phpdocs)
+1. [Blank Lines](#blank-lines)
 
 
 ## Introduction
@@ -890,7 +891,9 @@ $query = "SELECT
 
 - For complex HTML pages, you MUST use a templating engine
 - The PHP short tag `<?=` can be used to print $variable
-- When adding control structures in templates (if, for, etc) the markup inside them must be intended, same as code would. Good:
+- When adding control structures in templates (if, for, etc) the markup inside them must be intended the same as code would be. 
+
+Good:
 ```
 <p>Some html</p>
 <% if (something) { %>
